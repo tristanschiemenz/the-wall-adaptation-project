@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://de0y48tfnwj0m"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_5jaeo"]
+[ext_resource type="PackedScene" uid="uid://b32extq1ceqxb" path="res://bullet.tscn" id="2_10550"]
+[ext_resource type="Texture2D" uid="uid://co5mp6n6jvpwr" path="res://charegter.png" id="2_phew6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_req8l"]
+radius = 16.0
+height = 52.0
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_5jaeo")
+bullet_scene = ExtResource("2_10550")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_phew6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_req8l")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqx55rx5iko2n"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_ttr7k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1rik"]
+size = Vector2(104, 102)
+
+[sub_resource type="Gradient" id="Gradient_atgud"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_npmge"]
+gradient = SubResource("Gradient_atgud")
+width = 32
+height = 32
+
+[node name="Enemy" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_ttr7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_r1rik")
+disabled = true
+
+[node name="EnemyArea" type="Area2D" parent="."]
+position = Vector2(1, 1)
+
+[node name="EnemyHitbox" type="CollisionShape2D" parent="EnemyArea"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_r1rik")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = SubResource("GradientTexture2D_npmge")
+
+[connection signal="area_entered" from="EnemyArea" to="." method="_on_enemy_area_area_entered"]
