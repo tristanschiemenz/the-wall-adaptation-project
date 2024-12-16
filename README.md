@@ -6,7 +6,7 @@ This is a 2D video game adaptation of the novel *The Wall* by John Lanchester, d
 ## Features
 - **Genre**: Narrative-driven exploration game with survival elements.
 - **Graphics**: 2D pixel art style.
-- **Platform**: PC (Windows, Linux, macOS).
+- **Platform**: PC (Windows).
 - **Engine**: Godot Engine (version 4.3).
 - **Language**: GDScript.
 
