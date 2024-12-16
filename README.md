@@ -7,13 +7,13 @@ This is a 2D video game adaptation of the novel *The Wall* by John Lanchester, d
 - **Genre**: Narrative-driven exploration game with survival elements.
 - **Graphics**: 2D pixel art style.
 - **Platform**: PC (Windows, Linux, macOS).
-- **Engine**: Godot Engine (version 4.0 or later).
+- **Engine**: Godot Engine (version 4.3).
 - **Language**: GDScript.
 
 ## Getting Started
 
 ### Prerequisites
-- Install [Godot Engine](https://godotengine.org/) (version 4.0 or later).
+- Install [Godot Engine](https://godotengine.org/) (version 4.3).
 - Ensure your system meets the minimum requirements for running Godot.
 
 ### Installation
