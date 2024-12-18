@@ -46,5 +46,34 @@ func set_text_for_key() -> void:
 				button_name = "Right Click"
 	
 		button.text = button_name
+
+
+func _on_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		button.text = "Press any key..."
+		set_process_unhandled_key_input(toggled_on)
+		
+		for i in get_tree().get_nodes_in_group("hotkey_button"):
+			if i.action_name != self.action_name:
+				i.button.toggle_mode = false
+				i.set_process_unhandled_key_input(false)
+	else:
+		
+		for i in get_tree().get_nodes_in_group("hotkey_button"):
+			if i.action_name != self.action_name:
+				i.button.toggle_mode = true
+				i.set_process_unhandled_key_input(false)
+				
+		set_text_for_key() 
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	rebind_action_key(event)
+	button.button_pressed = false
 	
+func rebind_action_key(event) -> void:
+	InputMap.action_erase_events(action_name)
+	InputMap.action_add_event(action_name,event)
 	
+	set_process_unhandled_key_input(false)
+	set_text_for_key()
+	set_action_name()
