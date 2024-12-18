@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfrtfk74ryh3v"]
+
+[ext_resource type="Script" path="res://scripts/hotkey_rebind_button.gd" id="1_a3kbq"]
+[ext_resource type="FontFile" uid="uid://bvma7538bonhr" path="res://assets/PixelOperator8.ttf" id="1_ue1ui"]
+
+[node name="hotkey_rebind_button" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a3kbq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -438.0
+offset_top = -20.0
+offset_right = 438.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ue1ui")
+theme_override_font_sizes/font_size = 32
+text = "ACTION"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 200
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ue1ui")
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "Action_key"

@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://bk0d2kti5yu12"]
+
+[ext_resource type="Texture2D" uid="uid://bcxverdmteypm" path="res://assets/options_label.png" id="1_d4naq"]
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_guuqp"]
+[ext_resource type="FontFile" uid="uid://bvma7538bonhr" path="res://assets/PixelOperator8.ttf" id="2_ank34"]
+[ext_resource type="PackedScene" uid="uid://ceftihjyahsi4" path="res://scenes/settings_tab_container.tscn" id="3_uthfr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ldyg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mm0ns"]
+bg_color = Color(0.669082, 0.493458, 0.385645, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iv5sr"]
+bg_color = Color(0.488265, 0.345622, 0.257382, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cpda"]
+bg_color = Color(0.230315, 0.230315, 0.230315, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="options_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_guuqp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+z_index = 1
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_d4naq")
+stretch_mode = 3
+
+[node name="Settings_Tab_Container" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_uthfr")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_ank34")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7ldyg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mm0ns")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iv5sr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cpda")
+text = "Back
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
