@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://de0y48tfnwj0m"]
+[gd_scene load_steps=6 format=3 uid="uid://de0y48tfnwj0m"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5jaeo"]
 [ext_resource type="PackedScene" uid="uid://b32extq1ceqxb" path="res://bullet.tscn" id="2_10550"]
@@ -7,6 +7,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_req8l"]
 radius = 16.0
 height = 52.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_oenj8"]
+polygon = PackedVector2Array(6, -16, -3, -16, -12.8, -6, -15.8, -6, -11.1, 8.2, -13, 10.2, -13, 14, 14.2, 14, 12, -5.2, 12, -10.9)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_5jaeo")
@@ -18,3 +21,7 @@ texture = ExtResource("2_phew6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_req8l")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+scale = Vector2(2, 2)
+occluder = SubResource("OccluderPolygon2D_oenj8")

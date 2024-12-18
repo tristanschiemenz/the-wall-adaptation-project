@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://btfiohl5i1xtx"]
+[gd_scene load_steps=13 format=4 uid="uid://btfiohl5i1xtx"]
 
 [ext_resource type="Texture2D" uid="uid://bmrbrwpk5u6hs" path="res://tile_map_the_wall.png" id="1_bhwn1"]
 [ext_resource type="Script" path="res://spawn_path.gd" id="2_pefje"]
 [ext_resource type="PackedScene" uid="uid://dqx55rx5iko2n" path="res://enemy.tscn" id="3_chhp7"]
+[ext_resource type="Texture2D" uid="uid://bhsh3wq23ruyv" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="4_ijy3o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dk2nh"]
 texture = ExtResource("1_bhwn1")
@@ -65,7 +66,6 @@ shape = SubResource("SegmentShape2D_npwo1")
 curve = SubResource("Curve2D_2u0v4")
 script = ExtResource("2_pefje")
 enemy_scene = ExtResource("3_chhp7")
-spawn_interval = 10.0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="spawnPath"]
 position = Vector2(-1, -52)
@@ -76,3 +76,45 @@ rotation = -0.00518125
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallBlock"]
 position = Vector2(320, 255.833)
 shape = SubResource("RectangleShape2D_v4tqr")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = 2
+position = Vector2(411, 230.667)
+scale = Vector2(0.716146, 0.703125)
+shadow_enabled = true
+texture = ExtResource("4_ijy3o")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+z_index = 2
+position = Vector2(535.667, 230.667)
+scale = Vector2(0.716146, 0.703125)
+shadow_enabled = true
+texture = ExtResource("4_ijy3o")
+
+[node name="PointLight2D6" type="PointLight2D" parent="."]
+z_index = 2
+position = Vector2(632.333, 230.667)
+scale = Vector2(0.716146, 0.703125)
+shadow_enabled = true
+texture = ExtResource("4_ijy3o")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+z_index = 2
+position = Vector2(279.667, 230.667)
+scale = Vector2(0.716146, 0.703125)
+shadow_enabled = true
+texture = ExtResource("4_ijy3o")
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+z_index = 2
+position = Vector2(155, 230.667)
+scale = Vector2(0.716146, 0.703125)
+shadow_enabled = true
+texture = ExtResource("4_ijy3o")
+
+[node name="PointLight2D5" type="PointLight2D" parent="."]
+z_index = 2
+position = Vector2(27, 230.667)
+scale = Vector2(0.716146, 0.703125)
+shadow_enabled = true
+texture = ExtResource("4_ijy3o")

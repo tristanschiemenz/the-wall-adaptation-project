@@ -51,6 +51,7 @@ offset_right = 768.0
 offset_bottom = 433.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.6, 0.6)
 script = ExtResource("1_62ja5")
 
 [node name="Panel" type="Panel" parent="."]
@@ -138,8 +139,10 @@ grow_horizontal = 2
 texture = ExtResource("4_unodk")
 
 [node name="tomate_plant" parent="." instance=ExtResource("5_3dkkn")]
-position = Vector2(249, 357)
+position = Vector2(1673.33, 885)
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

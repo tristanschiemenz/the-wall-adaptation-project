@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b32extq1ceqxb"]
+[gd_scene load_steps=5 format=3 uid="uid://b32extq1ceqxb"]
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_ar7qa"]
 [ext_resource type="Texture2D" uid="uid://y0mgure8h67g" path="res://istockphoto-461854685-612x612.jpg" id="1_ir25t"]
@@ -6,6 +6,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hwmk"]
 radius = 7.0
 height = 42.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fqq5b"]
+polygon = PackedVector2Array(-204, 306, -204, -306, 204, -306, 204, 306)
 
 [node name="Bullet" type="RigidBody2D"]
 mass = 0.001
@@ -24,5 +27,9 @@ texture = ExtResource("1_ir25t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BulletArea"]
 shape = SubResource("CapsuleShape2D_2hwmk")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2(0.095, 0.095)
+occluder = SubResource("OccluderPolygon2D_fqq5b")
 
 [connection signal="area_entered" from="BulletArea" to="." method="_on_bullet_area_area_entered"]

@@ -3,7 +3,7 @@ extends Path2D
 
 # Path to the enemy scene
 @export var enemy_scene: PackedScene
-@export var spawn_interval: float = 2.0  # Time between enemy spawns
+@export var spawn_interval: float = 10  # Time between enemy spawns
 
 var spawn_timer: float = 0  # Internal timer
 
@@ -13,6 +13,9 @@ func _process(delta):
 	if spawn_timer <= 0:
 		spawn_enemy()
 		spawn_timer = spawn_interval  # Reset the timer
+		if spawn_interval > 0.5:
+			spawn_interval = spawn_interval / 2
+	
 
 func spawn_enemy():
 	if not enemy_scene:

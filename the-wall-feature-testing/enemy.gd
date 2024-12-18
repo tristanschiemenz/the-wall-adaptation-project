@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @export var speed: float = 50  # Speed of the enemy's downward movement
 
-func _process(delta):
+func _physics_process(delta: float) -> void:
 	# Move the enemy downward
 	position.y += speed * delta
 

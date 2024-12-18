@@ -15,6 +15,7 @@ height = 32
 [node name="Enemy" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_ttr7k")
+speed = 25.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1)

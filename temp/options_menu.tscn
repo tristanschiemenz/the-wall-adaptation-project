@@ -1,28 +1,150 @@
-[gd_scene load_steps=2 format=3 uid="uid://b068halc4tlro"]
+[gd_scene load_steps=12 format=3 uid="uid://b068halc4tlro"]
 
 [ext_resource type="Script" path="res://options_menu.gd" id="1_82nrh"]
+[ext_resource type="Texture2D" uid="uid://e3iietuijqcs" path="res://main_menu first Background.png" id="2_lohdd"]
+[ext_resource type="Texture2D" uid="uid://cy6rrv4ghoigt" path="res://cooltext471740640405288.png" id="3_afiil"]
+[ext_resource type="PackedScene" uid="uid://dkjhgfjcb0hq8" path="res://tomate_plant.tscn" id="4_7nh5b"]
+[ext_resource type="FontFile" uid="uid://dcv0721mylcxu" path="res://PixelOperator8.ttf" id="5_dlvka"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ratg"]
+texture = ExtResource("2_lohdd")
+modulate_color = Color(0.753984, 0.753984, 0.753984, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uahri"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcjia"]
+bg_color = Color(0.493545, 0.493546, 0.493546, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.368627)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmj8n"]
+bg_color = Color(0.237539, 0.237539, 0.237539, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.368627)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7k85d"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.368627)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_smfjp"]
+a = Vector2(1055, 2)
+b = Vector2(-876.667, 2)
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 433.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.6, 0.6)
 script = ExtResource("1_82nrh")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -511.5
+offset_top = -63.0
+offset_right = 511.5
+offset_bottom = 216.0
+grow_horizontal = 2
+texture = ExtResource("3_afiil")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7ratg")
+
+[node name="tomate_plant" parent="." instance=ExtResource("4_7nh5b")]
+position = Vector2(1673.33, 885)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.5
+offset_top = -143.5
+offset_right = 283.5
+offset_bottom = 339.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dlvka")
+theme_override_font_sizes/font_size = 56
+text = "Volume: 100"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dlvka")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uahri")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gcjia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fmj8n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7k85d")
+text = "Options
+"
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_dlvka")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uahri")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gcjia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fmj8n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7k85d")
+text = "Back"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(876.667, 358.333)
+shape = SubResource("SegmentShape2D_smfjp")
+
+[connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
