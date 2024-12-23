@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1nnrwgviecqc"]
+
+[ext_resource type="Script" path="res://scripts/phase1/bullet_p_1.gd" id="1_gfyps"]
+[ext_resource type="Texture2D" uid="uid://delp5x1l0lsxo" path="res://assets/phase1/bullet.png" id="2_rdpgq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmog2"]
+radius = 3.33333
+height = 6.66667
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c4520"]
+radius = 3.39935
+
+[node name="Bullet_P1" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_gfyps")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_lmog2")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_rdpgq")
+
+[node name="BulletArea" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BulletArea"]
+shape = SubResource("CircleShape2D_c4520")

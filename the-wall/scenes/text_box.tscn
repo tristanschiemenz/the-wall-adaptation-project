@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6kgw2fad0374"]
+
+[ext_resource type="Script" path="res://text_box.gd" id="1_vuetm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5au3n"]
+bg_color = Color(0.00392157, 0.160784, 0.701961, 0.411765)
+
+[sub_resource type="Theme" id="Theme_xw4ub"]
+Panel/styles/panel = SubResource("StyleBoxFlat_5au3n")
+
+[sub_resource type="LabelSettings" id="LabelSettings_l2s18"]
+font_size = 46
+
+[node name="TextBox" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vuetm")
+
+[node name="TextPanel" type="Panel" parent="."]
+offset_right = 371.0
+offset_bottom = 153.0
+theme = SubResource("Theme_xw4ub")
+
+[node name="DisappearTimer" type="Timer" parent="."]
+
+[node name="BodyLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 59.0
+offset_right = 368.0
+offset_bottom = 150.0
+text = "blablabla"
+
+[node name="HeaderLabel" type="Label" parent="."]
+offset_right = 372.0
+offset_bottom = 64.0
+text = "Name"
+label_settings = SubResource("LabelSettings_l2s18")

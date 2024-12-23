@@ -1,0 +1,122 @@
+[gd_scene load_steps=18 format=4 uid="uid://kdkyrfba112d"]
+
+[ext_resource type="Texture2D" uid="uid://dq3lmacwkgv6x" path="res://assets/phase1/wall_lantern.png" id="1_u5ufe"]
+[ext_resource type="Texture2D" uid="uid://d31eiav7v0ekq" path="res://assets/phase1/wall_normal.png" id="2_set34"]
+[ext_resource type="Texture2D" uid="uid://bpiu7m24amhbu" path="res://assets/phase1/wall_stair.png" id="3_gc7s2"]
+[ext_resource type="Texture2D" uid="uid://bwjscsvep7cmy" path="res://assets/phase1/ocean_animated.tres" id="4_fbwdq"]
+[ext_resource type="Script" path="res://scripts/phase1/map.gd" id="5_t1hlk"]
+[ext_resource type="Texture2D" uid="uid://c54dffb8x3hso" path="res://assets/phase1/2d_lights_and_shadows_neutral_point_light.webp" id="6_84wps"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dg840"]
+texture = ExtResource("1_u5ufe")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhoj8"]
+texture = ExtResource("2_set34")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gv5er"]
+texture = ExtResource("3_gc7s2")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6s4sn"]
+texture = ExtResource("4_fbwdq")
+texture_region_size = Vector2i(64, 64)
+use_texture_padding = false
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_aw4hy"]
+tile_size = Vector2i(64, 64)
+sources/4 = SubResource("TileSetAtlasSource_dg840")
+sources/5 = SubResource("TileSetAtlasSource_yhoj8")
+sources/6 = SubResource("TileSetAtlasSource_gv5er")
+sources/7 = SubResource("TileSetAtlasSource_6s4sn")
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bb70m"]
+a = Vector2(319.857, 140.996)
+b = Vector2(-9, 140.425)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4il2p"]
+a = Vector2(323.143, 161.568)
+b = Vector2(-12.1429, 161.711)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_306xr"]
+a = Vector2(0.428571, 161.711)
+b = Vector2(0.428571, 135.425)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tadow"]
+a = Vector2(274.286, 160.568)
+b = Vector2(273.857, 135.425)
+
+[sub_resource type="Curve2D" id="Curve2D_vcp1t"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5.57143, 36.9964, 0, 0, 0, 0, 266.143, 36.9964, 0, 0, 0, 0, 5.28571, 36.8536)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rp7l"]
+size = Vector2(321.857, 21.2857)
+
+[node name="Map_P1" type="TileMapLayer"]
+texture_filter = 1
+position = Vector2(0, -259.975)
+scale = Vector2(7, 7)
+tile_map_data = PackedByteArray("AAAAAAAABwAAAAAAAAABAAAABwAAAAAAAAACAAAABwAAAAAAAAADAAAABwAAAAAAAAAEAAAABwAAAAAAAAAAAAIABAAAAAAAAAABAAIABgAAAAAAAAACAAIABQAAAAAAAAADAAIABAAAAAAAAAAEAAIABgAAAAAAAAAAAAEABwAAAAAAAAABAAEABwAAAAAAAAACAAEABwAAAAAAAAADAAEABwAAAAAAAAAEAAEABwAAAAAAAAA=")
+tile_set = SubResource("TileSet_aw4hy")
+script = ExtResource("5_t1hlk")
+
+[node name="WallCollision" type="StaticBody2D" parent="."]
+
+[node name="upper_wall" type="CollisionShape2D" parent="WallCollision"]
+position = Vector2(0, -5.625)
+shape = SubResource("SegmentShape2D_bb70m")
+
+[node name="lower_wall" type="CollisionShape2D" parent="WallCollision"]
+position = Vector2(0, -1.42)
+shape = SubResource("SegmentShape2D_4il2p")
+
+[node name="left_wall" type="CollisionShape2D" parent="WallCollision"]
+shape = SubResource("SegmentShape2D_306xr")
+
+[node name="right_wall" type="CollisionShape2D" parent="WallCollision"]
+shape = SubResource("SegmentShape2D_tadow")
+
+[node name="left_light" type="PointLight2D" parent="."]
+position = Vector2(32.571, 134.858)
+scale = Vector2(1, 0.5)
+shadow_enabled = true
+texture = ExtResource("6_84wps")
+height = 30.0
+
+[node name="right_light" type="PointLight2D" parent="."]
+position = Vector2(224.429, 134.858)
+scale = Vector2(1, 0.5)
+energy = 0.8
+shadow_enabled = true
+texture = ExtResource("6_84wps")
+height = 30.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.29219, 0.29219, 0.29219, 1)
+
+[node name="Flicker_timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="SpawnPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_vcp1t")
+
+[node name="SpawnPathFollower" type="PathFollow2D" parent="SpawnPath"]
+position = Vector2(5.57143, 36.9964)
+
+[node name="WallArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallArea"]
+position = Vector2(159.071, 148.354)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3rp7l")
+
+[connection signal="timeout" from="Flicker_timer" to="." method="_on_flicker_timer_timeout"]

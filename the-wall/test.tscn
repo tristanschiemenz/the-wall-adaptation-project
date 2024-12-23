@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://dayhyp11t1ev4"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_l8xmt"]
+[ext_resource type="PackedScene" uid="uid://kdkyrfba112d" path="res://scenes/phase1/map.tscn" id="1_tco7y"]
+[ext_resource type="PackedScene" uid="uid://tcf4gp22lu4" path="res://scenes/phase1/player_p_1.tscn" id="2_o0dkg"]
+[ext_resource type="PackedScene" uid="uid://bbkjumjnxu01n" path="res://scenes/phase1/enemy_p_1.tscn" id="3_p3r53"]
+[ext_resource type="PackedScene" uid="uid://dyxn8n0vqei65" path="res://scenes/phase1/overlay_p_1.tscn" id="4_vj5o3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_l8xmt")
+
+[node name="Map_p1" parent="." instance=ExtResource("1_tco7y")]
+
+[node name="Player_P1" parent="." instance=ExtResource("2_o0dkg")]
+position = Vector2(595, 788)
+
+[node name="Enemy_P1" parent="." instance=ExtResource("3_p3r53")]
+position = Vector2(610, -1)
+
+[node name="Overlay_P1" parent="." instance=ExtResource("4_vj5o3")]

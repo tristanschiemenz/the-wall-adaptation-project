@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://dk4s5wml2eyia"]
+
+[ext_resource type="Script" path="res://1_cut_scene_p_1.gd" id="1_82n73"]
+[ext_resource type="PackedScene" uid="uid://kdkyrfba112d" path="res://scenes/phase1/map.tscn" id="2_4ne5l"]
+[ext_resource type="Texture2D" uid="uid://bsfhqbdc1a82g" path="res://assets/phase1/player_1.png" id="3_n8x22"]
+[ext_resource type="Texture2D" uid="uid://dqtipymf6usmc" path="res://assets/phase1/palyer_2.png" id="4_5vh41"]
+[ext_resource type="Texture2D" uid="uid://dcan0cnkjr7ql" path="res://assets/phase1/palyer_3.png" id="5_boitq"]
+
+[sub_resource type="Curve2D" id="Curve2D_neukv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -95, 778, 0, 0, 0, 0, 218, 781, 0, 0, 0, 0, 431, 768, 0, 0, 0, 0, 492, 717, 0, 0, 0, 0, 525, 757, 0, 0, 0, 0, 911, 785, 0, 0, 0, 0, 1361, 781, 0, 0, 0, 0, 1507, 740, 0, 0, 0, 0, 1608, 738, 0, 0, 0, 0, 1606, 838, 0, 0, 0, 0, 764, 840, 0, 0, 0, 0, 697, 861, 0, 0, 0, 0, 395, 1054, 0, 0, 0, 0, 218, 1064, 0, 0, 0, 0, -119, 1057, 0, 0, 0, 0, -120, 1058)
+}
+point_count = 16
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l6qjj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n8x22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5vh41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_boitq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_kig0f"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -98, 825, 0, 0, 0, 0, 438, 826, 0, 0, 0, 0, 566, 746, 0, 0, 0, 0, 598, 813, 0, 0, 0, 0, 983, 836, 0, 0, 0, 0, 1360, 836, 0, 0, 0, 0, 1661, 737)
+}
+point_count = 7
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8fq6d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n8x22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5vh41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_boitq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[node name="1Cutscene_P1" type="Node2D"]
+script = ExtResource("1_82n73")
+
+[node name="Map_P1" parent="." instance=ExtResource("2_4ne5l")]
+position = Vector2(7.62939e-06, -259.975)
+scale = Vector2(7, 7)
+
+[node name="CaptainPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_neukv")
+
+[node name="CaptainPathFollower" type="PathFollow2D" parent="CaptainPath"]
+position = Vector2(-95, 778)
+rotation = 0.00958437
+
+[node name="Captain" type="AnimatedSprite2D" parent="CaptainPath/CaptainPathFollower"]
+texture_filter = 1
+rotation = 0.00641017
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_l6qjj")
+animation = &"walk"
+
+[node name="KevPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_kig0f")
+
+[node name="KevPathFollower" type="PathFollow2D" parent="KevPath"]
+position = Vector2(-98, 825)
+rotation = 0.00186567
+
+[node name="Kev" type="AnimatedSprite2D" parent="KevPath/KevPathFollower"]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_8fq6d")
+animation = &"walk"
