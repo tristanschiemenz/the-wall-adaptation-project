@@ -6,7 +6,7 @@ extends Node2D
 @onready var captain_path = $CaptainPath
 @onready var captain_path_follower = $CaptainPath/CaptainPathFollower
 @onready var captain_sprite = $CaptainPath/CaptainPathFollower/Captain
-
+@onready var textbox_scene = preload("res://scenes/text_box.tscn")
 # Actual speeds in pixels per second:
 var kev_speed = 100.0
 var captain_speed = 100.0
@@ -17,6 +17,8 @@ var captain_path_length = 0.0
 var is_kev_moving = false
 var is_captain_moving = false
 
+var firstStop = false
+var secondStop = false
 func _ready():
 	# Get the actual pixel length of each path
 	kev_path_length = kev_path.curve.get_baked_length()
@@ -29,7 +31,18 @@ func _ready():
 	# Turn off rotation if desired
 	kev_path_follower.rotates = false
 	captain_path_follower.rotates = false
+	
 
+	
+	# Create an instance of it
+	var textbox_instance = textbox_scene.instantiate()
+	
+	# Add it as a child to the current node (or another node of your choice)
+	add_child(textbox_instance)
+	
+	# Finally, call its custom function to show text
+	textbox_instance.show_textbox("Captain", "Welcome on the Wall newone. What was your\n name again? ... Ah Kavanagh i remeber.", 6.0,Vector2(10,550))
+	
 	# Optionally start them walking
 	start_kevin_walk()
 	start_captain_walk()
@@ -43,11 +56,16 @@ func _process(delta):
 		kev_path_follower.progress_ratio += increment
 
 		# Clamp if it goes beyond the end
-		if kev_path_follower.progress_ratio >= 1.0:
-			kev_path_follower.progress_ratio = 1.0
-			is_kev_moving = false
-		if abs(kev_path_follower.progress_ratio - 0.3738) < 0.002:
+		if kev_path_follower.progress_ratio >= 0.99:
 			stop_kevin_walk()
+		if abs(kev_path_follower.progress_ratio - 0.3738) < 0.001 and firstStop == false:
+			stop_kevin_walk()
+			first_stop()
+			firstStop = true
+		if abs(kev_path_follower.progress_ratio - 0.979) < 0.001 and secondStop == false:
+			stop_kevin_walk()
+			
+			
 	else:
 		kev_sprite.stop()
 	if is_captain_moving:
@@ -56,16 +74,55 @@ func _process(delta):
 		var increment = (captain_speed / captain_path_length) * delta
 		captain_path_follower.progress_ratio += increment
 
-		if captain_path_follower.progress_ratio >= 1.0:
-			captain_path_follower.progress_ratio = 1.0
-			is_captain_moving = false
-		if abs(captain_path_follower.progress_ratio - 0.167) < 0.002:
-			print("hi")
+		if captain_path_follower.progress_ratio >= 0.99:
 			stop_captain_walk()
+		if abs(captain_path_follower.progress_ratio - 0.167) < 0.001 and firstStop == false:
+			stop_captain_walk()
+		if abs(captain_path_follower.progress_ratio - 0.485) < 0.001 and secondStop == false:
+			stop_captain_walk()
+			second_stop()
+			secondStop = true
 	else:
 		captain_sprite.stop()
+		
+		
+func first_stop():
+	var textbox_instance = textbox_scene.instantiate()
+	add_child(textbox_instance)
+	
+	textbox_instance.show_textbox("Captain","I believe you know your task. If not, I'll repeat it. You must shot everything you see in the water, because they are the others.",10.0,Vector2(50, 550))
+	
+	await get_tree().create_timer(10.0).timeout
+	
+	textbox_instance.show_textbox(
+		"Captain", "Therefore, there's only one rule. Dont let the others come through if you let them through you will get put to sea.",10.0,Vector2(50, 550))
+
+	await get_tree().create_timer(10.0).timeout
+	start_kevin_walk()
+	start_captain_walk()
+	
+func second_stop():
+	var textbox_instance = textbox_scene.instantiate()
+	add_child(textbox_instance)
+	
+	textbox_instance.show_textbox("Captain","Be carefull sometimes the light doesent function as excepted and break down but we fix it soon after it.",10.0,Vector2(1000, 550))
+	
+	await get_tree().create_timer(10.0).timeout
+	
+	textbox_instance.show_textbox(
+		"Captain", "I will leave now you need to stay on the Wall for the next 100 days. In a 12h shift system but you will not have much free time so concentrate on the wall.",15.0,Vector2(1000, 550))
+
+	await get_tree().create_timer(15.0).timeout
+	
+	textbox_instance.show_textbox(
+		"Captain", "It might get boring. See you soon!",5.0,Vector2(1000, 550))
+		
+	await get_tree().create_timer(5.0).timeout
+	captain_sprite.flip_h = true
+	start_kevin_walk()
+	start_captain_walk()
 # Public methods:
-func start_kevin_walk():
+func start_kevin_walk(): 
 	is_kev_moving = true
 
 func stop_kevin_walk():

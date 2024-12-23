@@ -1,6 +1,7 @@
 extends Control
 
 
+
 @onready var header_label = $HeaderLabel
 @onready var body_label   = $BodyLabel
 @onready var timer        = $DisappearTimer
@@ -26,5 +27,4 @@ func show_textbox(header_text: String, body_text: String, duration: float = 3.0,
 	timer.start()
 
 func _on_disappear_timeout():
-
-	queue_free()
+	hide()
