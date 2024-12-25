@@ -3,19 +3,14 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Load the universal textbox scene
-	var textbox_scene = preload("res://scenes/text_box.tscn")
+	var scene1 = preload("res://scenes/phase1/1_cutscene_p_1.tscn").instantiate()
+	add_child(scene1)
+	scene1.cutscene_finished.connect(_on_cutscene_finished)
+func _on_cutscene_finished():
+	var scene2 = preload("res://scenes/phase1/game_p_1.tscn").instantiate()
 	
-	# Create an instance of it
-	var textbox_instance = textbox_scene.instantiate()
+	add_child(scene2)
 	
-	# Add it as a child to the current node (or another node of your choice)
-	add_child(textbox_instance)
-	
-	# Finally, call its custom function to show text
-	textbox_instance.show_textbox("My Header", "My Body Text", 5.0,Vector2(500,500))
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

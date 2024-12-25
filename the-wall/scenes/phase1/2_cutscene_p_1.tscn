@@ -1,0 +1,92 @@
+[gd_scene load_steps=14 format=3 uid="uid://cyhahriqanfjv"]
+
+[ext_resource type="PackedScene" uid="uid://dyxn8n0vqei65" path="res://scenes/phase1/overlay_p_1.tscn" id="1_35ffm"]
+[ext_resource type="Script" path="res://scripts/phase1/2_cutscene_p_1.gd" id="1_pdfqe"]
+[ext_resource type="PackedScene" uid="uid://kdkyrfba112d" path="res://scenes/phase1/map.tscn" id="2_kn6ly"]
+[ext_resource type="Texture2D" uid="uid://5ea7t140wvg1" path="res://assets/phase1/hifa_1.png" id="3_udvb4"]
+[ext_resource type="Texture2D" uid="uid://dnfjwkbswjok" path="res://assets/phase1/hifa_2.png" id="4_d7jtd"]
+[ext_resource type="Texture2D" uid="uid://dd5tlcj47ih7u" path="res://assets/phase1/hifa_3.png" id="5_gg1yp"]
+[ext_resource type="Texture2D" uid="uid://bsfhqbdc1a82g" path="res://assets/phase1/player_1.png" id="6_rdice"]
+[ext_resource type="Texture2D" uid="uid://dqtipymf6usmc" path="res://assets/phase1/palyer_2.png" id="7_kwwt3"]
+[ext_resource type="Texture2D" uid="uid://dcan0cnkjr7ql" path="res://assets/phase1/palyer_3.png" id="8_4326j"]
+
+[sub_resource type="Curve2D" id="Curve2D_fh83m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2225, 797, 0, 0, 0, 0, 1825, 795, 0, 0, 0, 0, 1448, 788, 0, 0, 0, 0, 1197, 714, 0, 0, 0, 0, 921, 795, 0, 0, 0, 0, -97, 800)
+}
+point_count = 6
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3h7y8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_udvb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d7jtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gg1yp")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_kyu7a"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1070, 713)
+}
+point_count = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cf6w6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_rdice")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kwwt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4326j")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[node name="2_cutscene_P1" type="Node2D"]
+script = ExtResource("1_pdfqe")
+
+[node name="Overlay_P1" parent="." instance=ExtResource("1_35ffm")]
+dayCount = 70
+
+[node name="Map_P1" parent="." instance=ExtResource("2_kn6ly")]
+
+[node name="HifaPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_fh83m")
+
+[node name="HifaPathFollower" type="PathFollow2D" parent="HifaPath"]
+position = Vector2(1196.09, 714.145)
+rotation = -3.03067
+progress = 1039.74
+
+[node name="HifaSprite" type="AnimatedSprite2D" parent="HifaPath/HifaPathFollower"]
+texture_filter = 1
+rotation = 3.14159
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_3h7y8")
+animation = &"walk"
+flip_h = true
+
+[node name="KevPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_kyu7a")
+
+[node name="KevPathFollower" type="PathFollow2D" parent="KevPath"]
+
+[node name="KevSprite" type="AnimatedSprite2D" parent="KevPath/KevPathFollower"]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_cf6w6")
+animation = &"walk"

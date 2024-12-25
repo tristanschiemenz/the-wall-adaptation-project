@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dk4s5wml2eyia"]
 
-[ext_resource type="Script" path="res://1_cut_scene_p_1.gd" id="1_82n73"]
+[ext_resource type="Script" path="res://scripts/phase1/1_cut_scene_p_1.gd" id="1_82n73"]
 [ext_resource type="PackedScene" uid="uid://kdkyrfba112d" path="res://scenes/phase1/map.tscn" id="2_4ne5l"]
 [ext_resource type="Texture2D" uid="uid://bm3jqqvfgd51e" path="res://assets/phase1/captain_1.png" id="3_5c7sr"]
 [ext_resource type="Texture2D" uid="uid://bsfhqbdc1a82g" path="res://assets/phase1/player_1.png" id="3_n8x22"]
@@ -79,8 +79,8 @@ animation = &"walk"
 curve = SubResource("Curve2D_kig0f")
 
 [node name="KevPathFollower" type="PathFollow2D" parent="KevPath"]
-position = Vector2(1699.76, 724)
-progress = 1877.51
+position = Vector2(-98, 825)
+rotation = 0.00186567
 
 [node name="Kev" type="AnimatedSprite2D" parent="KevPath/KevPathFollower"]
 texture_filter = 1

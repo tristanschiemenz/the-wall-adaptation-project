@@ -1,48 +1,56 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6kgw2fad0374"]
+[gd_scene load_steps=7 format=3 uid="uid://c6kgw2fad0374"]
 
-[ext_resource type="Script" path="res://text_box.gd" id="1_vuetm"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5au3n"]
-bg_color = Color(0.00392157, 0.160784, 0.701961, 0.411765)
-
-[sub_resource type="Theme" id="Theme_xw4ub"]
-Panel/styles/panel = SubResource("StyleBoxFlat_5au3n")
+[ext_resource type="Script" path="res://scripts/text_box.gd" id="1_vuetm"]
+[ext_resource type="Texture2D" uid="uid://4f43hhjolye" path="res://assets/phase1/speechBubble_right.png" id="2_ncvdh"]
+[ext_resource type="Texture2D" uid="uid://bq4k6yrc02xu8" path="res://assets/phase1/speechBubble_left.png" id="2_o70ti"]
+[ext_resource type="FontFile" uid="uid://day2ceg8scrki" path="res://assets/ByteBounce.ttf" id="3_dymqp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kku30"]
-shadow_size = 2
-shadow_color = Color(0, 0, 0, 0.690196)
+line_spacing = -2.0
+font = ExtResource("3_dymqp")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_l2s18"]
-font_size = 46
-shadow_size = 2
-shadow_color = Color(0, 0, 0, 0.690196)
+font = ExtResource("3_dymqp")
+font_size = 56
+font_color = Color(0.494118, 0.6, 0.639216, 1)
+shadow_size = 0
 
 [node name="TextBox" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_vuetm")
 
-[node name="TextPanel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 371.0
-offset_bottom = 153.0
-theme = SubResource("Theme_xw4ub")
+[node name="SpeechBubble_left" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(246, 86)
+scale = Vector2(8, 8)
+texture = ExtResource("2_o70ti")
+
+[node name="SpeechBubble_right" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(246, 86)
+scale = Vector2(8, 8)
+texture = ExtResource("2_ncvdh")
 
 [node name="DisappearTimer" type="Timer" parent="."]
 
 [node name="BodyLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 59.0
-offset_right = 368.0
-offset_bottom = 150.0
-text = "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+offset_left = 35.0
+offset_top = 41.0
+offset_right = 463.0
+offset_bottom = 113.0
+text = "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
 label_settings = SubResource("LabelSettings_kku30")
 autowrap_mode = 3
 
 [node name="HeaderLabel" type="Label" parent="."]
 layout_mode = 0
-offset_right = 372.0
-offset_bottom = 64.0
+offset_left = 44.0
+offset_top = 3.0
+offset_right = 408.0
+offset_bottom = 51.0
 text = "Name"
 label_settings = SubResource("LabelSettings_l2s18")

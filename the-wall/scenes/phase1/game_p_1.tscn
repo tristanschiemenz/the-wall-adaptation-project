@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn1ul6aajdkj"]
+
+[ext_resource type="Script" path="res://scripts/phase1/game_p_1.gd" id="1_w76v0"]
+[ext_resource type="PackedScene" uid="uid://kdkyrfba112d" path="res://scenes/phase1/map.tscn" id="2_vhiv4"]
+[ext_resource type="PackedScene" uid="uid://tcf4gp22lu4" path="res://scenes/phase1/player_p_1.tscn" id="3_8xsse"]
+[ext_resource type="PackedScene" uid="uid://dyxn8n0vqei65" path="res://scenes/phase1/overlay_p_1.tscn" id="4_ae3oc"]
+
+[node name="game_P1" type="Node2D"]
+script = ExtResource("1_w76v0")
+
+[node name="Map_P1" parent="." instance=ExtResource("2_vhiv4")]
+
+[node name="Player_P1" parent="." instance=ExtResource("3_8xsse")]
+position = Vector2(960, 779)
+
+[node name="Overlay_P1" parent="." instance=ExtResource("4_ae3oc")]

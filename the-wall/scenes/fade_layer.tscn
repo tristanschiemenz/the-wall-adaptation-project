@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbtmx3umo4al5"]
+
+[ext_resource type="Script" path="res://scripts/fade_layer.gd" id="1_mlbfx"]
+[ext_resource type="FontFile" uid="uid://day2ceg8scrki" path="res://assets/ByteBounce.ttf" id="2_qtcpw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c7jh2"]
+font = ExtResource("2_qtcpw")
+font_size = 171
+
+[node name="FadeLayer" type="CanvasLayer"]
+script = ExtResource("1_mlbfx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1084.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1916.0
+offset_bottom = 1083.0
+text = "blabla"
+label_settings = SubResource("LabelSettings_c7jh2")
+horizontal_alignment = 1
+vertical_alignment = 1

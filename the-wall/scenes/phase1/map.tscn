@@ -44,8 +44,8 @@ a = Vector2(323.143, 161.568)
 b = Vector2(-12.1429, 161.711)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_306xr"]
-a = Vector2(0.428571, 161.711)
-b = Vector2(0.428571, 135.425)
+a = Vector2(-2.041, 161.711)
+b = Vector2(-2.041, 135.425)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_tadow"]
 a = Vector2(274.286, 160.568)
@@ -53,9 +53,9 @@ b = Vector2(273.857, 135.425)
 
 [sub_resource type="Curve2D" id="Curve2D_vcp1t"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 5.57143, 36.9964, 0, 0, 0, 0, 266.143, 36.9964, 0, 0, 0, 0, 5.28571, 36.8536)
+"points": PackedVector2Array(0, 0, 0, 0, 20.636, 20, 0, 0, 0, 0, 262.35, 20)
 }
-point_count = 3
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3rp7l"]
 size = Vector2(321.857, 21.2857)
@@ -110,7 +110,8 @@ autostart = true
 curve = SubResource("Curve2D_vcp1t")
 
 [node name="SpawnPathFollower" type="PathFollow2D" parent="SpawnPath"]
-position = Vector2(5.57143, 36.9964)
+position = Vector2(27.3689, 20)
+progress = 6.77856
 
 [node name="WallArea" type="Area2D" parent="."]
 
