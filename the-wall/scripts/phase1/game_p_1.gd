@@ -63,10 +63,39 @@ func _on_day_timer_timeout() -> void:
 	overlay.text = "Day: " + str(current_day)
 	#cutscene in between
 	if current_day == 70:
-		pass
+		 # Pause the day progression
+		run_cutscene_2()
 	
 	set_day_timer_wait_time()
+func run_cutscene_2() -> void:
+	day_timer.stop()
+	enemy_timer.stop() 
+	var cutscene_2_scene = preload("res://scenes/phase1/2_cutscene_p_1.tscn")
+	var cutscene_2_instance = cutscene_2_scene.instantiate()
+	
+	# Pass in the player’s current position to the cutscene
+	var kev_pos = $Player_P1.position
+	$Player_P1.hide()
+	$Player_P1.set_process(false)
+	$Player_P1.set_physics_process(false)
+	add_child(cutscene_2_instance)
+	cutscene_2_instance.set_kev_start_position(Vector2(kev_pos))
+	# Wait for the cutscene to emit its "cutscene_finished" signal
+	await cutscene_2_instance.cutscene_finished
+	
+	# Once done, remove the cutscene from the scene tree
+	cutscene_2_instance.queue_free()
 
+	# Move player if needed
+	$Player_P1.position = Vector2(1070, 713)
+
+	# Resume normal game flow (day timer, etc.)
+	$Player_P1.show()
+	$Player_P1.set_process(true)
+	$Player_P1.set_physics_process(true)
+	set_day_timer_wait_time()
+	day_timer.start()
+	enemy_timer.start()
 # -------------------------------------------------------------------
 # ENEMY TIMER CALLBACK {every second}
 # -------------------------------------------------------------------
@@ -79,7 +108,7 @@ func _on_enemy_timer_timeout() -> void:
 func set_day_timer_wait_time() -> void:
 	if current_day < 70:
 		# From day 1 to day 69 => every 2 seconds
-		day_timer.wait_time = 2.0
+		day_timer.wait_time = 0.1
 	elif current_day < 80:
 		# From day 70 to 79 => every 10 seconds
 		day_timer.wait_time = 10.0
@@ -89,6 +118,7 @@ func set_day_timer_wait_time() -> void:
 	else:
 		# From day 90 to 99 => every 20 seconds again
 		day_timer.wait_time = 20.0
+
 
 # -------------------------------------------------------------------
 # SPAWNING LOGIC BASED ON DAY

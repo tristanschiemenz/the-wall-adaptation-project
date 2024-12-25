@@ -45,6 +45,7 @@ offset_bottom = 113.0
 text = "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
 label_settings = SubResource("LabelSettings_kku30")
 autowrap_mode = 3
+justification_flags = 0
 
 [node name="HeaderLabel" type="Label" parent="."]
 layout_mode = 0
