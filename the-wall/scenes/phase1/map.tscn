@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://kdkyrfba112d"]
+[gd_scene load_steps=20 format=4 uid="uid://kdkyrfba112d"]
 
 [ext_resource type="Texture2D" uid="uid://dq3lmacwkgv6x" path="res://assets/phase1/wall_lantern.png" id="1_u5ufe"]
 [ext_resource type="Texture2D" uid="uid://d31eiav7v0ekq" path="res://assets/phase1/wall_normal.png" id="2_set34"]
@@ -35,6 +35,62 @@ sources/5 = SubResource("TileSetAtlasSource_yhoj8")
 sources/6 = SubResource("TileSetAtlasSource_gv5er")
 sources/7 = SubResource("TileSetAtlasSource_6s4sn")
 
+[sub_resource type="Shader" id="Shader_1ixfa"]
+code = "// Rain and Snow shader by Brian Smith (steampunkdemon.itch.io)
+// MIT licence
+
+shader_type canvas_item;
+
+uniform float rain_amount = 200.0;
+uniform float near_rain_length : hint_range(0.01, 1.0) = 0.2;
+uniform float far_rain_length : hint_range(0.01, 1.0) = 0.1;
+uniform float near_rain_width : hint_range(0.1, 1.0) = 1.0;
+uniform float far_rain_width : hint_range(0.1, 1.0) = 0.5;
+uniform float near_rain_transparency : hint_range(0.1, 1.0) = 1.0;
+uniform float far_rain_transparency : hint_range(0.1, 1.0) = 0.5;
+// Replace the below reference to source_color with hint_color if you are using a version of Godot before 4.0.
+uniform vec4 rain_color : source_color = vec4(0.8, 0.8, 0.8, 1.0);
+uniform float base_rain_speed : hint_range(0.1, 1.0) = 0.5;
+uniform float additional_rain_speed : hint_range(0.1, 1.0) = 0.5;
+uniform float slant : hint_range(-1.0, 1.0) = 0.2;
+
+void fragment() {
+// To control the rainfall from your program comment out the below line and add a new uniform above as:
+// uniform float time = 10000.0;
+// Then update the time uniform from your _physics_process function by adding delta. You can then pause the rainfall by not changing the time uniform.
+	float time = 10000.0 + TIME;
+
+// Uncomment the following line if you are applying the shader to a TextureRect and using a version of Godot before 4.0.
+//	COLOR = texture(TEXTURE,UV);
+
+	vec2 uv = vec2(0.0);
+	float remainder = mod(UV.x - UV.y * slant, 1.0 / rain_amount);
+	uv.x = (UV.x - UV.y * slant) - remainder;
+	float rn = fract(sin(uv.x * rain_amount));
+	uv.y = fract((UV.y + rn));
+
+// Blurred trail. Works well for rain:
+//	COLOR = mix(COLOR, rain_color, smoothstep(1.0 - (far_rain_length + (near_rain_length - far_rain_length) * rn), 1.0, fract(uv.y - time * (base_rain_speed + additional_rain_speed * rn))) * (far_rain_transparency + (near_rain_transparency - far_rain_transparency) * rn) * step(remainder * rain_amount, far_rain_width + (near_rain_width - far_rain_width) * rn));
+
+// No trail. Works well for snow:
+	COLOR = mix(COLOR, rain_color, step(1.0 - (far_rain_length + (near_rain_length - far_rain_length) * rn), fract(uv.y - time * (base_rain_speed + additional_rain_speed * rn))) * (far_rain_transparency + (near_rain_transparency - far_rain_transparency) * rn) * step(remainder * rain_amount, far_rain_width + (near_rain_width - far_rain_width) * rn));
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmrhs"]
+shader = SubResource("Shader_1ixfa")
+shader_parameter/rain_amount = 150.0
+shader_parameter/near_rain_length = 0.1
+shader_parameter/far_rain_length = 0.1
+shader_parameter/near_rain_width = 1.0
+shader_parameter/far_rain_width = 0.5
+shader_parameter/near_rain_transparency = 1.0
+shader_parameter/far_rain_transparency = 0.5
+shader_parameter/rain_color = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/base_rain_speed = 0.277
+shader_parameter/additional_rain_speed = 0.5
+shader_parameter/slant = 0.222
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bb70m"]
 a = Vector2(319.857, 140.996)
 b = Vector2(-9, 140.425)
@@ -67,6 +123,18 @@ scale = Vector2(7, 7)
 tile_map_data = PackedByteArray("AAAAAAAABwAAAAAAAAABAAAABwAAAAAAAAACAAAABwAAAAAAAAADAAAABwAAAAAAAAAEAAAABwAAAAAAAAAAAAIABAAAAAAAAAABAAIABgAAAAAAAAACAAIABQAAAAAAAAADAAIABAAAAAAAAAAEAAIABgAAAAAAAAAAAAEABwAAAAAAAAABAAEABwAAAAAAAAACAAEABwAAAAAAAAADAAEABwAAAAAAAAAEAAEABwAAAAAAAAA=")
 tile_set = SubResource("TileSet_aw4hy")
 script = ExtResource("5_t1hlk")
+
+[node name="RainRect" type="ColorRect" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_nmrhs")
+offset_top = 37.0
+offset_right = 273.0
+offset_bottom = 194.0
+color = Color(1, 1, 1, 0)
+
+[node name="RainTimer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
 
 [node name="WallCollision" type="StaticBody2D" parent="."]
 
@@ -119,4 +187,5 @@ progress = 6.77856
 position = Vector2(159.071, 148.354)
 shape = SubResource("RectangleShape2D_3rp7l")
 
+[connection signal="timeout" from="RainTimer" to="." method="_on_rain_timer_timeout"]
 [connection signal="timeout" from="Flicker_timer" to="." method="_on_flicker_timer_timeout"]

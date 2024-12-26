@@ -108,7 +108,7 @@ func _on_enemy_timer_timeout() -> void:
 func set_day_timer_wait_time() -> void:
 	if current_day < 70:
 		# From day 1 to day 69 => every 2 seconds
-		day_timer.wait_time = 0.1
+		day_timer.wait_time = 1
 	elif current_day < 80:
 		# From day 70 to 79 => every 10 seconds
 		day_timer.wait_time = 10.0
