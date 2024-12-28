@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm3iswgwycmhc"]
+
+[ext_resource type="Texture2D" uid="uid://blc3mrc6fuejp" path="res://assets/player_1.png" id="1_3ac4q"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_lomr5"]
+
+[node name="player" type="CharacterBody2D"]
+collision_layer = 3
+script = ExtResource("1_lomr5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3ac4q")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-6.5, -8.5, -6.5, -7.5, -7.5, -7.5, -7.5, -6.5, -8.5, -6.5, -8.5, -4.5, -9.5, -4.5, -9.5, -3.5, -11.5, -3.5, -11.5, -2.5, -12.5, -2.5, -12.5, 0.5, -11.5, 0.5, -11.5, 1.5, -12.5, 1.5, -12.5, 5.5, -11.5, 5.5, -11.5, 6.5, -10.5, 6.5, -10.5, 7.5, -8.5, 7.5, -8.5, 12.5, -4.5, 12.5, -4.5, 11.5, -5.5, 11.5, -5.5, 10.5, -1.5, 10.5, -1.5, 12.5, 4.5, 12.5, 4.5, 10.5, 3.5, 10.5, 3.5, 8.5, 2.5, 8.5, 2.5, 7.5, 1.5, 7.5, 1.5, 6.5, 2.5, 6.5, 2.5, 2.5, 1.5, 2.5, 1.5, -1.5, 2.5, -1.5, 2.5, -2.5, 3.5, -2.5, 3.5, -4.5, 2.5, -4.5, 2.5, -6.5, 1.5, -6.5, 1.5, -7.5, 0.5, -7.5, 0.5, -8.5)
