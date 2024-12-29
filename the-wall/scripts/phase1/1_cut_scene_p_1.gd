@@ -165,8 +165,8 @@ func last_stop():
 	fade_intstance.fade_in_black_with_text("First day on the Wall",8.0)
 	await get_tree().create_timer(15.0).timeout
 	fade_intstance.queue_free()
-	queue_free()
-	emit_signal("cutscene_finished")
+	get_tree().change_scene_to_file("res://scenes/phase1/game_p_1.tscn")
+	#emit_signal("cutscene_finished")
 # Public methods:
 func start_kevin_walk(): 
 	is_kev_moving = true
