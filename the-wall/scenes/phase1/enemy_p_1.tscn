@@ -1,35 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbkjumjnxu01n"]
+[gd_scene load_steps=5 format=3 uid="uid://bbkjumjnxu01n"]
 
 [ext_resource type="Script" path="res://scripts/phase1/enemy_p_1.gd" id="1_dthbs"]
+[ext_resource type="Texture2D" uid="uid://davyjnocvfryl" path="res://assets/phase1/enemies.png" id="2_lm15g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prito"]
-size = Vector2(63, 61)
-
-[sub_resource type="Gradient" id="Gradient_e3ikp"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xcyim"]
-gradient = SubResource("Gradient_e3ikp")
+size = Vector2(113, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87hvu"]
-size = Vector2(72, 70)
+size = Vector2(113, 96)
 
 [node name="Enemy_P1" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_dthbs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.5)
+position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_prito")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_xcyim")
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_lm15g")
 
 [node name="EnemyArea" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea"]
-position = Vector2(1, 1)
+position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_87hvu")
 
 [connection signal="area_entered" from="EnemyArea" to="." method="_on_enemy_area_area_entered"]
