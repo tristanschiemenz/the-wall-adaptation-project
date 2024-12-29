@@ -31,17 +31,6 @@ func set_text_for_key() -> void:
 	if action_event is InputEventKey:
 		var action_keycode = OS.get_keycode_string(action_event.physical_keycode)
 		button.text = str(action_keycode)
-	elif action_event is InputEventMouseButton:
-		var mouse_button = action_event.button_index
-		var button_name = ""
-		
-		match mouse_button:
-			MOUSE_BUTTON_LEFT:
-				button_name = "Left Click"
-			MOUSE_BUTTON_RIGHT:
-				button_name = "Right Click"
-	
-		button.text = button_name
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
@@ -66,19 +55,9 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	button.button_pressed = false
 	
 func rebind_action_key(event) -> void:
-	for action in InputMap.get_actions():
-		if action != action_name:
-			var events = InputMap.action_get_events(action)
-			for existing_events in events:
-				if existing_events.as_text() == event.as_text():
-					button.text = "Key in use"
-					await get_tree().create_timer(3).timeout
-					set_text_for_key()
-					return
-			
 	InputMap.action_erase_events(action_name)
-	InputMap.action_add_event(action_name,event)
+	InputMap.action_add_event(action_name, event)
+	
 	set_process_unhandled_key_input(false)
 	set_text_for_key()
 	set_action_name()
-	

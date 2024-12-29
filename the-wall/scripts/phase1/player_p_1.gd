@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 	if shoot_timer > 0:
 		shoot_timer -= delta
 
-	if Input.is_action_pressed("shoot") and shoot_timer <= 0:
+	if (Input.is_action_pressed("shoot") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)) and shoot_timer <= 0:
 		shoot()
 		shoot_timer = shoot_cooldown
 		
