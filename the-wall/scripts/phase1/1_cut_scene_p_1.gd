@@ -9,8 +9,8 @@ extends Node2D
 @onready var textbox_scene = preload("res://scenes/text_box.tscn")
 @onready var fade_out = preload("res://scenes/fade_layer.tscn")
 # Actual speeds in pixels per second:
-var kev_speed = 100.0
-var captain_speed = 100.0
+var kev_speed = 70.0
+var captain_speed = 70.0
 
 signal cutscene_finished
 
@@ -44,7 +44,7 @@ func _ready():
 	add_child(textbox_instance)
 	
 	# Finally, call its custom function to show text
-	textbox_instance.show_textbox("Captain", "Welcome on the Wall newone. What was your name again? ... Ah Kavanagh I remeber.", 6.0,Vector2(10,550),false)
+	textbox_instance.show_textbox("Captain", "Kavanagh, welcome to the Wall. I'm the Captain, and I'm the one who decides who's worth trusting up here. You're new, so listen carefully.", 9.0,Vector2(10,550),false)
 	
 	# Optionally start them walking
 	start_kevin_walk()
@@ -96,19 +96,26 @@ func wait_for_enter() -> void:
 		if Input.is_action_just_pressed("ui_accept"):
 			return
 		# Wait until next frame so we don't freeze the game
-		await get_tree().process()
+		await get_tree().process_frame
 func first_stop():
 	var textbox_instance = textbox_scene.instantiate()
 	add_child(textbox_instance)
 	
-	textbox_instance.show_textbox("Captain","I believe you know your task. If not, I'll repeat it. You must shot everything you see in the water, because they are the others.",99999.0,Vector2(50, 550))
+	textbox_instance.show_textbox("Captain","This isn't just any posting - it's your life for the next two years. If you fail, you're gone. That's not just talk. It's the law of the Wall.",10.0,Vector2(50, 550))
 	
-	await wait_for_enter()
-	
-	textbox_instance.show_textbox(
-		"Captain", "Therefore, there's only one rule. Dont let the others come through if you let them through you will get put to sea.",10.0,Vector2(50, 550))
-
 	await get_tree().create_timer(10.0).timeout
+	
+	textbox_instance.show_textbox("Captain", "Now, about how you move and fight. Think of it as drilling: you press Enter whenever you want to advance to the next command - like you're listening for my orders, got it?",99999.0,Vector2(50, 550))
+
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
+	
+	textbox_instance.show_textbox("Captain", "Movement's your lifeline. Use W, A, S, D on your kit's interface - or if that's not comfortable, the arrow keys work just as well. Keep those feet moving, soldier.",99999.0,Vector2(50, 550))
+
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
+	textbox_instance.queue_free()
+	
 	start_kevin_walk()
 	start_captain_walk()
 	
@@ -116,19 +123,38 @@ func second_stop():
 	var textbox_instance = textbox_scene.instantiate()
 	add_child(textbox_instance)
 	
-	textbox_instance.show_textbox("Captain","Be carefull sometimes the light doesent function as excepted and break down but we fix it soon after it.",10.0,Vector2(1150, 550))
+	textbox_instance.show_textbox("Captain","The Others won't wait for you to get cozy. When you see them, left-click to fire in their direction. Don't hesitate - one moment of doubt and they'll be over the Wall.",99999.0,Vector2(1150, 550))
 	
-	await get_tree().create_timer(10.0).timeout
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 	
-	textbox_instance.show_textbox(
-		"Captain", "I will leave now you need to stay on the Wall for the next 100 days. In a 12h shift system but you will not have much free time so concentrate on the wall.",15.0,Vector2(1150, 550))
+	textbox_instance.show_textbox("Captain", "You'll feel the recoil in your arms. That's normal. The adrenaline spike? That's also normal. Just keep your aim steady and your head on a swivel.",99999.0,Vector2(1150, 550))
 
-	await get_tree().create_timer(15.0).timeout
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 	
-	textbox_instance.show_textbox(
-		"Captain", "It might get boring. See you soon!",5.0,Vector2(1150, 550))
+	textbox_instance.show_textbox("Captain", "You're not just shooting at silhouettes - these are people who will do anything to get in. Our job is to make sure that doesn't happen. Clear?",99999.0,Vector2(1150, 550))
 		
-	await get_tree().create_timer(5.0).timeout
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
+	
+	textbox_instance.show_textbox("Captain", "Keep your eyes forward, but never forget to check your corners. The sea's full of surprises, and the Others know how to use them to their advantage.",99999.0,Vector2(1150, 550))
+		
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
+	
+	textbox_instance.show_textbox("Captain", "Survive your shift, rest and repeat. Do it enough times without messing up, and maybe - just maybe - you'll outlast your tour on the Wall.",99999.0,Vector2(1150, 550))
+		
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
+	
+	textbox_instance.show_textbox("Captain", "That's all the wisdom you get for now, Kavanagh. Remember the controls, keep your fear in check, and watch for my orders. Welcome aboard. Now, let's see if you've got what it takes.",99999.0,Vector2(1150, 550))
+		
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
+	
+	textbox_instance.queue_free()
+	
 	captain_sprite.flip_h = true
 	start_kevin_walk()
 	start_captain_walk()

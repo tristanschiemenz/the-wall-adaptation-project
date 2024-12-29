@@ -30,7 +30,7 @@ var kev_path_length  = 0.0
 var is_hifa_moving = false
 var is_kev_moving  = false
 
-# We’ll track whether we've triggered certain stops
+# We'll track whether we've triggered certain stops
 var hifa_stopped_once = false
 var kev_stopped_once  = false
 
@@ -38,7 +38,7 @@ var kev_stopped_once  = false
 signal cutscene_finished
 
 func _ready():
-	# 1) Calculate each path’s length (in pixels)
+	# 1) Calculate each path's length (in pixels)
 	#    (Make sure your HifaPath and KevPath have valid curves!)
 	hifa_path_length = hifa_path.curve.get_baked_length()
 	kev_path_length  = kev_path.curve.get_baked_length()
@@ -47,7 +47,7 @@ func _ready():
 	hifa_path_follower.progress_ratio = 0.0
 	kev_path_follower.progress_ratio  = 0.0
 
-	# 3) Disable rotation if you don’t want the sprites to turn
+	# 3) Disable rotation if you don't want the sprites to turn
 	hifa_path_follower.rotates = false
 	kev_path_follower.rotates  = false
 	
@@ -97,7 +97,7 @@ func _process(delta: float) -> void:
 
 #
 # -----------------------------------------------------------------------
-#   Example: Setting Kev’s start and destination positions on the path
+#   Example: Setting Kev's start and destination positions on the path
 # -----------------------------------------------------------------------
 #
 
@@ -127,98 +127,135 @@ func set_kev_start_position(start_pos: Vector2):
 #   Stop and resume logic for Hifa
 # -----------------------------------------------------------------------
 #
+func wait_for_enter() -> void:
+	# This will block until the user presses "ui_accept" (Enter/Space by default).
+	while true:
+		if Input.is_action_just_pressed("ui_accept"):
+			return
+		# Wait until next frame so we don't freeze the game
+		await get_tree().process_frame
 
 func first_stop() -> void:
 	# Example: show a series of textboxes or do something else
 	var textbox_instance = textbox_scene.instantiate()
 	add_child(textbox_instance)
 
-	await textbox_instance.show_textbox("Hifa", "Ugh, my hands are frozen solid. Feels like the wind's always finding new ways to slice through you.", 7.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(7.0).timeout
+	await textbox_instance.show_textbox("Hifa", "Ugh, my hands are frozen solid. Feels like the wind's always finding new ways to slice through you.", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "Here, stand in front of me. I might block a bit of the gust.", 5.0, Vector2(630, 520), true)
-	await get_tree().create_timer(5.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "Here, stand in front of me. I might block a bit of the gust.", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "Thanks. You'd think after all these months on the Wall we'd get used to the cold, but it still surprises me every time.", 8.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(8.0).timeout
+	await textbox_instance.show_textbox("Hifa", "Thanks. You'd think after all these months on the Wall we'd get used to the cold, but it still surprises me every time.", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "It does. Some people say the chill seeps in deeper the longer you stay. I'm not sure if they mean just the weather or everything else going on around us.", 9.0, Vector2(630, 520), true)
-	await get_tree().create_timer(9.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "It does. Some people say the chill seeps in deeper the longer you stay. I'm not sure if they mean just the weather or everything else going on around us.", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "Probably both. The waiting… the scanning the horizon for Others… it's wearing.", 6.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(6.0).timeout
+	await textbox_instance.show_textbox("Hifa", "Probably both. The waiting… the scanning the horizon for Others… it's wearing.", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "You ever think about what would happen if we, by accident, let someone through?", 7.0, Vector2(630, 520), true)
-	await get_tree().create_timer(7.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "You ever think about what would happen if we, by accident, let someone through?", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "I think about it all the time. We all do. If we fail… we become Others ourselves. Exiled to the sea.", 8.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(8.0).timeout
+	await textbox_instance.show_textbox("Hifa", "I think about it all the time. We all do. If we fail… we become Others ourselves. Exiled to the sea.", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "And that's the end, basically. No chance of a future, of a normal life…", 6.0, Vector2(630, 520), true)
-	await get_tree().create_timer(6.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "And that's the end, basically. No chance of a future, of a normal life…", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "But what if letting someone through wasn't an accident? What if we did it - because it was the right thing to do?", 9.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(9.0).timeout
+	await textbox_instance.show_textbox("Hifa", "But what if letting someone through wasn't an accident? What if we did it - because it was the right thing to do?", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "I'm not even sure I know what the 'right thing' is anymore. Saving your own life? Or saving someone else's?", 8.0, Vector2(630, 520), true)
-	await get_tree().create_timer(8.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "I'm not even sure I know what the 'right thing' is anymore. Saving your own life? Or saving someone else's?", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "I know the official line: If you let them through, you're condemning the whole country, betraying everyone inside these walls. But sometimes I wonder - maybe we aren't really safe in here anyway.", 9.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(9.0).timeout
+	await textbox_instance.show_textbox("Hifa", "I know the official line: If you let them through, you're condemning the whole country, betraying everyone inside these walls. But sometimes I wonder - maybe we aren't really safe in here anyway.", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "In the end, it's just fear that keeps us in line…", 7.0, Vector2(630, 520), true)
-	await get_tree().create_timer(7.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "In the end, it's just fear that keeps us in line…", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "I've never had anyone to talk to about these doubts. Maybe it's because I haven't found anyone I really... trust.", 8.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(8.0).timeout
+	await textbox_instance.show_textbox("Hifa", "I've never had anyone to talk to about these doubts. Maybe it's because I haven't found anyone I really... trust.", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "You can trust me, Hifa. I know we haven't spent much time together, but... I like hearing what you actually think. No one wants to voice these questions out loud.", 10.0, Vector2(630, 520), true)
-	await get_tree().create_timer(10.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "You can trust me, Hifa. I know we haven't spent much time together, but... I like hearing what you actually think. No one wants to voice these questions out loud.", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "I think I like hearing your voice more than I should.", 6.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(6.0).timeout
+	await textbox_instance.show_textbox("Hifa", "I think I like hearing your voice more than I should.", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "Maybe we're both looking for someone to share this burden with.", 6.0, Vector2(630, 520), true)
-	await get_tree().create_timer(6.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "Maybe we're both looking for someone to share this burden with.", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "Do you ever picture a life after these two years on the Wall? Where you're not scanning the horizon or freezing out here?", 9.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(9.0).timeout
+	await textbox_instance.show_textbox("Hifa", "Do you ever picture a life after these two years on the Wall? Where you're not scanning the horizon or freezing out here?", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "I do. But it always feels like I'm jinxing it. Like if I think too much about life after, I'll lose focus here and—", 8.0, Vector2(630, 520), true)
-	await get_tree().create_timer(8.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "I do. But it always feels like I'm jinxing it. Like if I think too much about life after, I'll lose focus here and - ", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "—and slip up, and let the Others in.", 5.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(5.0).timeout
+	await textbox_instance.show_textbox("Hifa", " - and slip up, and let the Others in.", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "Exactly. But if we survive the full term, then we get to choose, right? Some people go into security, others… become 'Breeders.'", 8.0, Vector2(630, 520), true)
-	await get_tree().create_timer(8.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "Exactly. But if we survive the full term, then we get to choose, right? Some people go into security, others… become 'Breeders.'", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "Yes, 'Breeders.' I hate that word. But it's the path for most of us who want a future—some sense of family.", 8.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(8.0).timeout
+	await textbox_instance.show_textbox("Hifa", "Yes, 'Breeders.' I hate that word. But it's the path for most of us who want a future - some sense of family.", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "I never thought much about having children before. It felt like the world was so… broken.", 7.0, Vector2(630, 520), true)
-	await get_tree().create_timer(7.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "I never thought much about having children before. It felt like the world was so… broken.", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "And now?", 3.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(3.0).timeout
+	await textbox_instance.show_textbox("Hifa", "And now?", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "Maybe… there's a chance to fix things if enough of us start caring again. If we choose to love instead of fear.", 8.0, Vector2(630, 520), true)
-	await get_tree().create_timer(8.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "Maybe… there's a chance to fix things if enough of us start caring again. If we choose to love instead of fear.", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
+	
+	await textbox_instance.show_textbox("Hifa", "And if we can find someone to care about, maybe having children won't feel like bringing them into a nightmare.", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "And if we can find someone to care about, maybe having children won't feel like bringing them into a nightmare.", 8.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(8.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "Hifa… do you think that someone could be… us?", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "Hifa… do you think that someone could be… us?", 5.0, Vector2(630, 520), true)
-	await get_tree().create_timer(5.0).timeout
+	await textbox_instance.show_textbox("Hifa", "I think it could. If we can make it through this, if we don't get exiled, and if we can stand all the changes after the Wall… I'd like to find out.", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "I think it could. If we can make it through this, if we don't get exiled, and if we can stand all the changes after the Wall… I'd like to find out.", 9.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(9.0).timeout
+	await textbox_instance.show_textbox("Kavanagh", "I promise I'll watch out for you, Hifa. And one day - when we're off this Wall - we'll decide together what comes next.", 99999.0, Vector2(630, 520), true)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "I promise I'll watch out for you, Hifa. And one day—when we're off this Wall—we'll decide together what comes next.", 8.0, Vector2(630, 520), true)
-	await get_tree().create_timer(8.0).timeout
-
-	await textbox_instance.show_textbox("Hifa", "One day. Until then, we keep each other safe.", 5.0, Vector2(1120, 520), false)
-	await get_tree().create_timer(5.0).timeout
+	await textbox_instance.show_textbox("Hifa", "One day. Until then, we keep each other safe.", 99999.0, Vector2(1120, 520), false)
+	await wait_for_enter()
+	await get_tree().create_timer(.5).timeout
+	textbox_instance.queue_free()
 
 
 	# Done: now we can continue walking

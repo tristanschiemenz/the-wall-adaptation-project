@@ -114,7 +114,7 @@ func set_day_timer_wait_time() -> void:
 		day_timer.wait_time = 10.0
 	elif current_day < 90:
 		# From day 80 to 89 => every 20 seconds
-		day_timer.wait_time = 20.0
+		day_timer.wait_time = 10.0
 	else:
 		# From day 90 to 99 => every 20 seconds again
 		day_timer.wait_time = 20.0
@@ -128,13 +128,13 @@ func spawn_enemies_for_day(day: int) -> void:
 		if rng.randi_range(0, 100) < 5:
 			spawn_enemy()
 	elif day < 80:
-		if rng.randi_range(0, 100) < 20:
+		if rng.randi_range(0, 100) < 15:
 			spawn_enemy()
 	elif day < 90:
-		if rng.randi_range(0, 100) < 30:
+		if rng.randi_range(0, 100) < 20:
 			spawn_enemy()
 	elif day < 100:
-		if rng.randi_range(0, 100) < 50:
+		if rng.randi_range(0, 100) < 40:
 			spawn_enemy()
 	else:
 		# If day >= 100, you could do something else or ignore.
