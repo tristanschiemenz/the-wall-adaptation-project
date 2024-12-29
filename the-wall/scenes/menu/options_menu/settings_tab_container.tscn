@@ -88,12 +88,19 @@ layout_mode = 2
 
 [node name="audio_slider_settings" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("4_efvx4")]
 layout_mode = 2
+bus_name = "Master"
 
 [node name="audio_slider_settings2" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("4_efvx4")]
 layout_mode = 2
+bus_name = "Music"
 
 [node name="audio_slider_settings3" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("4_efvx4")]
 layout_mode = 2
+bus_name = "SFX"
+
+[node name="audio_slider_settings4" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("4_efvx4")]
+layout_mode = 2
+bus_name = "Voices"
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
 visible = false
