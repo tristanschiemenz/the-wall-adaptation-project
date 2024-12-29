@@ -90,13 +90,20 @@ func _process(delta):
 		captain_sprite.stop()
 		
 		
+func wait_for_enter() -> void:
+	# This will block until the user presses "ui_accept" (Enter/Space by default).
+	while true:
+		if Input.is_action_just_pressed("ui_accept"):
+			return
+		# Wait until next frame so we don't freeze the game
+		await get_tree().process()
 func first_stop():
 	var textbox_instance = textbox_scene.instantiate()
 	add_child(textbox_instance)
 	
-	textbox_instance.show_textbox("Captain","I believe you know your task. If not, I'll repeat it. You must shot everything you see in the water, because they are the others.",10.0,Vector2(50, 550))
+	textbox_instance.show_textbox("Captain","I believe you know your task. If not, I'll repeat it. You must shot everything you see in the water, because they are the others.",99999.0,Vector2(50, 550))
 	
-	await get_tree().create_timer(10.0).timeout
+	await wait_for_enter()
 	
 	textbox_instance.show_textbox(
 		"Captain", "Therefore, there's only one rule. Dont let the others come through if you let them through you will get put to sea.",10.0,Vector2(50, 550))
