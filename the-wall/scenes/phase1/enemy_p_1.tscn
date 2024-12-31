@@ -1,33 +1,33 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbkjumjnxu01n"]
 
 [ext_resource type="Script" path="res://scripts/phase1/enemy_p_1.gd" id="1_dthbs"]
-[ext_resource type="Texture2D" uid="uid://davyjnocvfryl" path="res://assets/phase1/enemies.png" id="2_lm15g"]
+[ext_resource type="Texture2D" uid="uid://b83xm3mg781f" path="res://assets/phase1/boat_with_other_4.png" id="2_y05y8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prito"]
-size = Vector2(113, 96)
+size = Vector2(66, 135)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87hvu"]
-size = Vector2(113, 96)
+size = Vector2(67, 135)
 
 [node name="Enemy_P1" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_dthbs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -1)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_prito")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
-texture = ExtResource("2_lm15g")
+texture = ExtResource("2_y05y8")
 
 [node name="EnemyArea" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea"]
-position = Vector2(0.5, -1)
+position = Vector2(0.5, -2.5)
 shape = SubResource("RectangleShape2D_87hvu")
 
 [connection signal="area_entered" from="EnemyArea" to="." method="_on_enemy_area_area_entered"]
