@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0esr1tnxfqik"
-path="res://.godot/imported/ocean_frame_1.png-8b34066af8e14f870881f1fc78eaff72.ctex"
+uid="uid://cyove8tkcul5e"
+path="res://.godot/imported/ocean_frame_2.png-bcc700d99680f4332648528168404454.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phase1/ocean_frame_1.png"
-dest_files=["res://.godot/imported/ocean_frame_1.png-8b34066af8e14f870881f1fc78eaff72.ctex"]
+source_file="res://assets/phase2/ocean_frame_2.png"
+dest_files=["res://.godot/imported/ocean_frame_2.png-bcc700d99680f4332648528168404454.ctex"]
 
 [params]
 

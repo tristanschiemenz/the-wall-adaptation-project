@@ -1,7 +1,7 @@
 [gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://bwjscsvep7cmy"]
 
-[ext_resource type="Texture2D" uid="uid://d0esr1tnxfqik" path="res://assets/phase1/ocean_frame_1.png" id="1_6b0ul"]
-[ext_resource type="Texture2D" uid="uid://cyove8tkcul5e" path="res://assets/phase1/ocean_frame_2.png" id="2_eb1kl"]
+[ext_resource type="Texture2D" uid="uid://d0esr1tnxfqik" path="res://assets/phase2/ocean_frame_1.png" id="1_6b0ul"]
+[ext_resource type="Texture2D" uid="uid://cyove8tkcul5e" path="res://assets/phase2/ocean_frame_2.png" id="2_eb1kl"]
 
 [resource]
 frames = 2
