@@ -6,7 +6,7 @@ extends Node2D
 var enemy_scene = preload("res://scenes/phase1/enemy_p_1.tscn")
 
 # Current day in the simulation
-var current_day: int = 230
+var current_day: int = 1
 
 # We'll dynamically create these timers in _ready()
 var day_timer: Timer
@@ -66,7 +66,9 @@ func _on_day_timer_timeout() -> void:
 		 # Pause the day progression
 		run_cutscene_2()
 	if current_day == 250:
-		run_cutscene_3()
+		run_cutscene_3()#
+	if current_day == 353:
+		run_cutscene_4()
 	
 	set_day_timer_wait_time()
 func run_cutscene_2() -> void:
@@ -129,6 +131,26 @@ func run_cutscene_3() -> void:
 	day_timer.start()
 	enemy_timer.start()
 
+func run_cutscene_4() -> void:
+	day_timer.stop()
+	enemy_timer.stop() 
+	var cutscene_4_scene = preload("res://scenes/phase1/4_cutscene_p_1.tscn")
+	var cutscene_4_instance = cutscene_4_scene.instantiate()
+	
+	# Pass in the player’s current position to the cutscene
+	var kev_pos = $Player_P1.position
+	$Player_P1.hide()
+	$Player_P1.set_process(false)
+	$Player_P1.set_physics_process(false)
+	add_child(cutscene_4_instance)
+	cutscene_4_instance.set_kev_start_position(Vector2(kev_pos))
+	# Wait for the cutscene to emit its "cutscene_finished" signal
+	await cutscene_4_instance.cutscene_finished
+	
+	# Once done, remove the cutscene from the scene tree
+	cutscene_4_instance.queue_free()
+
+
 # -------------------------------------------------------------------
 # ENEMY TIMER CALLBACK {every second}
 # -------------------------------------------------------------------
@@ -141,10 +163,10 @@ func _on_enemy_timer_timeout() -> void:
 func set_day_timer_wait_time() -> void:
 	if current_day < 200:
 		# From day 1 to day 69 => every 2 seconds
-		day_timer.wait_time = 0.5
+		day_timer.wait_time = 0.1
 	elif current_day < 300:
 		# From day 70 to 79 => every 10 seconds
-		day_timer.wait_time = 1.0
+		day_timer.wait_time = 0.1
 	elif current_day < 350:
 		# From day 80 to 89 => every 20 seconds
 		day_timer.wait_time = 5.0

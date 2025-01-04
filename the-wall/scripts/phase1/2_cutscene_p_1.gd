@@ -170,7 +170,7 @@ func first_stop() -> void:
 
 	await textbox_instance.show_textbox("Kavanagh", "And that's the end, basically. No chance of a future, of a normal life…", 99999.0, Vector2(630, 520), true)
 	await wait_for_enter()
-	await get_tree().create_timer(.5).timeoutt
+	await get_tree().create_timer(.5).timeout
 
 	await textbox_instance.show_textbox("Hifa", "I know the official line: If you let them through, you're condemning the whole country, betraying everyone inside these walls. But sometimes I wonder - maybe we aren't really safe in here anyway.", 99999.0, Vector2(1120, 520), false)
 	await wait_for_enter()

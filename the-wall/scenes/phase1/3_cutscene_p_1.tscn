@@ -74,7 +74,7 @@ animation = &"walk"
 curve = SubResource("Curve2D_4rvds")
 
 [node name="CaptainPathFollower" type="PathFollow2D" parent="CaptainPath"]
-position = Vector2(969.676, 803.114)
+position = Vector2(969.671, 803.114)
 progress = 1088.24
 rotates = false
 

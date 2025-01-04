@@ -1,0 +1,281 @@
+[gd_scene load_steps=30 format=3 uid="uid://1yrigeplkjdx"]
+
+[ext_resource type="Script" path="res://scenes/phase1/4_cutscene_p_1.gd" id="1_c0egl"]
+[ext_resource type="Texture2D" uid="uid://bsfhqbdc1a82g" path="res://assets/phase1/player_1.png" id="2_icis4"]
+[ext_resource type="Texture2D" uid="uid://dqtipymf6usmc" path="res://assets/phase1/palyer_2.png" id="3_mmnx8"]
+[ext_resource type="Texture2D" uid="uid://dcan0cnkjr7ql" path="res://assets/phase1/palyer_3.png" id="4_ruif5"]
+[ext_resource type="Texture2D" uid="uid://5ea7t140wvg1" path="res://assets/phase1/hifa_1.png" id="5_g8b3s"]
+[ext_resource type="Texture2D" uid="uid://dnfjwkbswjok" path="res://assets/phase1/hifa_2.png" id="6_vebqt"]
+[ext_resource type="Texture2D" uid="uid://dd5tlcj47ih7u" path="res://assets/phase1/hifa_3.png" id="7_e5v5o"]
+[ext_resource type="Texture2D" uid="uid://bm3jqqvfgd51e" path="res://assets/phase1/captain_1.png" id="8_uhhfb"]
+[ext_resource type="Texture2D" uid="uid://di4aaks2of1fk" path="res://assets/phase1/captain_2.png" id="9_da5mh"]
+[ext_resource type="Texture2D" uid="uid://cqessicmsyu6f" path="res://assets/phase1/captain_3.png" id="10_ktgs2"]
+[ext_resource type="Texture2D" uid="uid://bfyblqhvwe0hw" path="res://assets/phase1/other_1.png" id="11_83dvu"]
+[ext_resource type="Texture2D" uid="uid://dexffp0fbtxf7" path="res://assets/phase1/other_2.png" id="12_yfa2a"]
+[ext_resource type="Texture2D" uid="uid://cwmgebm0gl8hm" path="res://assets/phase1/other_3.png" id="13_f3ikg"]
+[ext_resource type="Texture2D" uid="uid://b83xm3mg781f" path="res://assets/phase1/boat_with_other_4.png" id="14_foph8"]
+[ext_resource type="Texture2D" uid="uid://delp5x1l0lsxo" path="res://assets/phase1/bullet.png" id="16_pd05g"]
+
+[sub_resource type="Curve2D" id="Curve2D_fkm4i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 705, 855)
+}
+point_count = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbwic"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_icis4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mmnx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ruif5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_a4n3s"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2130, 793, 0, 0, 0, 0, 1237, 790, 0, 0, 0, 0, 770, 815)
+}
+point_count = 3
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fxtqr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_g8b3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vebqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e5v5o")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_rwawe"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2190, 761, 0, 0, 0, 0, 1380, 770)
+}
+point_count = 2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhvdn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_uhhfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_da5mh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ktgs2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_5b1a4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2192, 815, 0, 0, 0, 0, 1390, 827)
+}
+point_count = 2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qucv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_83dvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yfa2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_f3ikg")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_bwrhm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 323, -50, 0, 0, 0, 0, 431, 639)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_skfe0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 877, -81, 0, 0, 0, 0, 869, 633)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_o3nfy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1207, -64, 0, 0, 0, 0, 1062, 633)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_kww34"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1329, -80, 0, 0, 0, 0, 1451, 635)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_iutws"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 789, 815, 0, 0, 0, 0, 1376, 769)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_8b15q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 727, 819, 0, 0, 0, 0, 1379, 824)
+}
+point_count = 2
+
+[node name="4_cutscene_p_1" type="Node2D"]
+script = ExtResource("1_c0egl")
+
+[node name="KevPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_fkm4i")
+
+[node name="KevPathFollower" type="PathFollow2D" parent="KevPath"]
+position = Vector2(729, 813)
+rotates = false
+
+[node name="KevSprite" type="AnimatedSprite2D" parent="KevPath/KevPathFollower"]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pbwic")
+animation = &"walk"
+
+[node name="HifaPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_a4n3s")
+
+[node name="HifaPathFollower" type="PathFollow2D" parent="HifaPath"]
+position = Vector2(770, 815)
+progress = 1360.67
+rotates = false
+
+[node name="HifaSprite" type="AnimatedSprite2D" parent="HifaPath/HifaPathFollower"]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_fxtqr")
+animation = &"walk"
+
+[node name="CaptainPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_rwawe")
+
+[node name="CaptainPathFollower" type="PathFollow2D" parent="CaptainPath"]
+position = Vector2(1380, 770)
+progress = 810.05
+rotates = false
+
+[node name="CaptainSprite" type="AnimatedSprite2D" parent="CaptainPath/CaptainPathFollower"]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_rhvdn")
+animation = &"walk"
+
+[node name="OtherPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_5b1a4")
+
+[node name="OtherPathFollower" type="PathFollow2D" parent="OtherPath"]
+position = Vector2(1390, 827)
+progress = 802.09
+rotates = false
+
+[node name="OtherSprite" type="AnimatedSprite2D" parent="OtherPath/OtherPathFollower"]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_6qucv")
+animation = &"walk"
+flip_h = true
+
+[node name="BoatPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_bwrhm")
+
+[node name="BoatPathFollower" type="PathFollow2D" parent="BoatPath"]
+position = Vector2(323, -50)
+rotation = 1.41531
+
+[node name="BoatSprite" type="Sprite2D" parent="BoatPath/BoatPathFollower"]
+texture_filter = 1
+rotation = -1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("14_foph8")
+
+[node name="Boat2Path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_skfe0")
+
+[node name="BoatPathFollower" type="PathFollow2D" parent="Boat2Path"]
+position = Vector2(877, -81)
+rotation = 1.582
+
+[node name="BoatSprite" type="Sprite2D" parent="Boat2Path/BoatPathFollower"]
+texture_filter = 1
+rotation = -1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("14_foph8")
+
+[node name="Boat3Path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_o3nfy")
+
+[node name="BoatPathFollower" type="PathFollow2D" parent="Boat3Path"]
+position = Vector2(1207, -64)
+rotation = 1.77591
+
+[node name="BoatSprite" type="Sprite2D" parent="Boat3Path/BoatPathFollower"]
+texture_filter = 1
+rotation = -1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("14_foph8")
+
+[node name="Boat4Path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_kww34")
+
+[node name="BoatPathFollower" type="PathFollow2D" parent="Boat4Path"]
+position = Vector2(1329, -80)
+rotation = 1.40179
+
+[node name="BoatSprite" type="Sprite2D" parent="Boat4Path/BoatPathFollower"]
+texture_filter = 1
+rotation = -1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("14_foph8")
+
+[node name="BulletPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_iutws")
+
+[node name="BulletPathFollower" type="PathFollow2D" parent="BulletPath"]
+position = Vector2(789, 815)
+rotates = false
+
+[node name="BulletSprite" type="Sprite2D" parent="BulletPath/BulletPathFollower"]
+texture_filter = 1
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("16_pd05g")
+
+[node name="Bullet2Path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_8b15q")
+
+[node name="BulletPathFollower" type="PathFollow2D" parent="Bullet2Path"]
+position = Vector2(727, 819)
+rotation = 0.00766856
+
+[node name="BulletSprite" type="Sprite2D" parent="Bullet2Path/BulletPathFollower"]
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("16_pd05g")

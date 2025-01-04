@@ -160,7 +160,7 @@ func first_stop() -> void:
 	await textbox_instance.show_textbox("Captain", "Good man. Keep it tight. We can't afford to lose anyone else.", 99999.0, Vector2(550, 600), true)
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
-	textbox_instance.queue_free()
+	
 	
 
 
