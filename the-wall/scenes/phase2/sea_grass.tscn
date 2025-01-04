@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://r6jswodht8nn"]
+
+[ext_resource type="Texture2D" uid="uid://dqrfi0pt54x37" path="res://assets/phase2/seagrass.png" id="1_exaa6"]
+[ext_resource type="Script" path="res://scripts/phase2/sea_grass.gd" id="1_xam66"]
+
+[node name="Sea_grass" type="Area2D"]
+script = ExtResource("1_xam66")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_exaa6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(2, -12, 2, -11, 1, -11, 1, -5, 0, -5, 0, -10, -1, -10, -1, -11, -3, -11, -3, -10, -2, -10, -2, -9, -1, -9, -1, -6, -2, -6, -2, -4, -3, -4, -3, -7, -4, -7, -4, -8, -5, -8, -5, -9, -6, -9, -6, -10, -7, -10, -7, -8, -6, -8, -6, -7, -5, -7, -5, -6, -4, -6, -4, -3, -5, -3, -5, -4, -6, -4, -6, -6, -7, -6, -7, -7, -8, -7, -8, -5, -7, -5, -7, -3, -6, -3, -6, -1, -7, -1, -7, 16, 7, 16, 7, -1, 6, -1, 6, -3, 7, -3, 7, -4, 8, -4, 8, -6, 7, -6, 7, -5, 6, -5, 6, -4, 5, -4, 5, -7, 6, -7, 6, -8, 7, -8, 7, -9, 5, -9, 5, -8, 4, -8, 4, -5, 3, -5, 3, -4, 2, -4, 2, -10, 3, -10, 3, -11, 4, -11, 4, -12)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -32,7 +32,8 @@ func next_night_fade() -> void:
 func island_skip_fade() -> void:
 	var fade_intstance = fade_out.instantiate()
 	add_child(fade_intstance)
-	fade_intstance.fade_in_black_with_text("Arriving at the island in the south",8.0)
+	fade_intstance.fade_in_black_with_text("Arriving at the island \nin the south",8.0)
 	await get_tree().create_timer(10.0).timeout
 	fade_intstance.queue_free()
+	get_tree().change_scene_to_file("res://scenes/phase2/theisland_map.tscn")
 	
