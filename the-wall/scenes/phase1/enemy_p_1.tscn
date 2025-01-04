@@ -1,13 +1,55 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbkjumjnxu01n"]
+[gd_scene load_steps=16 format=3 uid="uid://bbkjumjnxu01n"]
 
 [ext_resource type="Script" path="res://scripts/phase1/enemy_p_1.gd" id="1_dthbs"]
 [ext_resource type="Texture2D" uid="uid://b83xm3mg781f" path="res://assets/phase1/boat_with_other_4.png" id="2_y05y8"]
+[ext_resource type="Texture2D" uid="uid://bxbx6al0khg56" path="res://assets/phase1/frame_1_expolosion.png" id="3_fkwvi"]
+[ext_resource type="Texture2D" uid="uid://cfn3wcfot3iii" path="res://assets/phase1/frame_2_explosion.png" id="4_leox0"]
+[ext_resource type="Texture2D" uid="uid://rca8yk8u13l0" path="res://assets/phase1/frame_3_explosion.png" id="5_ujorh"]
+[ext_resource type="Texture2D" uid="uid://cwvrl7a4jas0s" path="res://assets/phase1/frame_4_explosion.png" id="6_q7gri"]
+[ext_resource type="Texture2D" uid="uid://d34s2uchn0x6x" path="res://assets/phase1/frame_5_explosion.png" id="7_odpwt"]
+[ext_resource type="Texture2D" uid="uid://b6jsn1ghktw1x" path="res://assets/phase1/frame_6_explosion.png" id="8_6d52r"]
+[ext_resource type="Texture2D" uid="uid://msl5nkyvdvc6" path="res://assets/phase1/frame_7_explosion.png" id="9_xnj7b"]
+[ext_resource type="Texture2D" uid="uid://5dyyu0n2634o" path="res://assets/phase1/frame_8_explosion.png" id="10_oq6vo"]
+[ext_resource type="AudioStream" uid="uid://dld0fqaoq3561" path="res://assets/phase1/sounds/medium-explosion-40472.mp3" id="11_aa1r5"]
+[ext_resource type="AudioStream" uid="uid://brjg5x8h0l13o" path="res://assets/phase1/sounds/scream.mp3" id="12_k2slc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prito"]
 size = Vector2(66, 135)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87hvu"]
 size = Vector2(67, 135)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vt667"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fkwvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_leox0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ujorh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q7gri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_odpwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6d52r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xnj7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oq6vo")
+}],
+"loop": false,
+"name": &"boom",
+"speed": 8.0
+}]
 
 [node name="Enemy_P1" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -18,7 +60,7 @@ position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_prito")
 disabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="boat_sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("2_y05y8")
@@ -29,5 +71,19 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea"]
 position = Vector2(0.5, -2.5)
 shape = SubResource("RectangleShape2D_87hvu")
+
+[node name="explosion_sprite" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(16, 39)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_vt667")
+animation = &"boom"
+
+[node name="explosion_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_aa1r5")
+
+[node name="scream_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_k2slc")
 
 [connection signal="area_entered" from="EnemyArea" to="." method="_on_enemy_area_area_entered"]

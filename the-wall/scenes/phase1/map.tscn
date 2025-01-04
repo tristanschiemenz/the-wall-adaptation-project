@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://kdkyrfba112d"]
+[gd_scene load_steps=22 format=4 uid="uid://kdkyrfba112d"]
 
 [ext_resource type="Texture2D" uid="uid://dq3lmacwkgv6x" path="res://assets/phase1/wall_lantern.png" id="1_u5ufe"]
 [ext_resource type="Texture2D" uid="uid://d31eiav7v0ekq" path="res://assets/phase1/wall_normal.png" id="2_set34"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bwjscsvep7cmy" path="res://assets/phase1/ocean_animated.tres" id="4_fbwdq"]
 [ext_resource type="Script" path="res://scripts/phase1/map.gd" id="5_t1hlk"]
 [ext_resource type="Texture2D" uid="uid://c54dffb8x3hso" path="res://assets/phase1/2d_lights_and_shadows_neutral_point_light.webp" id="6_84wps"]
+[ext_resource type="AudioStream" uid="uid://cqw6nxfc44j8x" path="res://assets/phase1/sounds/fly_by.mp3" id="7_y4kne"]
+[ext_resource type="AudioStream" uid="uid://c7c3s5n4j5q36" path="res://assets/phase1/sounds/ambient-noise-236388.mp3" id="8_8kcsf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dg840"]
 texture = ExtResource("1_u5ufe")
@@ -187,5 +189,18 @@ progress = 6.77856
 position = Vector2(159.071, 148.354)
 shape = SubResource("RectangleShape2D_3rp7l")
 
+[node name="fly_by_Timer" type="Timer" parent="."]
+wait_time = 23.0
+autostart = true
+
+[node name="fly_by_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_y4kne")
+
+[node name="ambient_noise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_8kcsf")
+autoplay = true
+
 [connection signal="timeout" from="RainTimer" to="." method="_on_rain_timer_timeout"]
 [connection signal="timeout" from="Flicker_timer" to="." method="_on_flicker_timer_timeout"]
+[connection signal="timeout" from="fly_by_Timer" to="." method="_on_fly_by_timer_timeout"]
+[connection signal="finished" from="ambient_noise" to="." method="_on_ambient_noise_finished"]

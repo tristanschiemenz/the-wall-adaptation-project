@@ -101,7 +101,7 @@ func first_stop():
 	var textbox_instance = textbox_scene.instantiate()
 	add_child(textbox_instance)
 	
-	textbox_instance.show_textbox("Captain","This isn't just any posting - it's your life for the next two years. If you fail, you're gone. That's not just talk. It's the law of the Wall.",10.0,Vector2(50, 550))
+	textbox_instance.show_textbox("Captain","This isn't just any posting - it's your life for the next two years. If you fail, in the next 730 days, you're gone. That's not just talk. It's the law of the Wall.",10.0,Vector2(50, 550))
 	
 	await get_tree().create_timer(10.0).timeout
 	

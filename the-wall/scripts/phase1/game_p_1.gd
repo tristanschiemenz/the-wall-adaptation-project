@@ -6,7 +6,7 @@ extends Node2D
 var enemy_scene = preload("res://scenes/phase1/enemy_p_1.tscn")
 
 # Current day in the simulation
-var current_day: int = 1
+var current_day: int = 230
 
 # We'll dynamically create these timers in _ready()
 var day_timer: Timer
@@ -54,7 +54,7 @@ func _ready() -> void:
 # -------------------------------------------------------------------
 func _on_day_timer_timeout() -> void:
 	# Once we hit day 100, we can optionally stop the timer (or do something else).
-	if current_day >= 100:
+	if current_day >= 353:
 		day_timer.stop()
 		#cutscene and phase switch
 		return
@@ -62,9 +62,11 @@ func _on_day_timer_timeout() -> void:
 	current_day += 1
 	overlay.text = "Day: " + str(current_day)
 	#cutscene in between
-	if current_day == 70:
+	if current_day == 180:
 		 # Pause the day progression
 		run_cutscene_2()
+	if current_day == 250:
+		run_cutscene_3()
 	
 	set_day_timer_wait_time()
 func run_cutscene_2() -> void:
@@ -96,6 +98,37 @@ func run_cutscene_2() -> void:
 	set_day_timer_wait_time()
 	day_timer.start()
 	enemy_timer.start()
+	
+func run_cutscene_3() -> void:
+	day_timer.stop()
+	enemy_timer.stop() 
+	var cutscene_3_scene = preload("res://scenes/phase1/3_cutscene_p_1.tscn")
+	var cutscene_3_instance = cutscene_3_scene.instantiate()
+	
+	# Pass in the player’s current position to the cutscene
+	var kev_pos = $Player_P1.position
+	$Player_P1.hide()
+	$Player_P1.set_process(false)
+	$Player_P1.set_physics_process(false)
+	add_child(cutscene_3_instance)
+	cutscene_3_instance.set_kev_start_position(Vector2(kev_pos))
+	# Wait for the cutscene to emit its "cutscene_finished" signal
+	await cutscene_3_instance.cutscene_finished
+	
+	# Once done, remove the cutscene from the scene tree
+	cutscene_3_instance.queue_free()
+
+	# Move player if needed
+	$Player_P1.position = Vector2(1059, 747)
+
+	# Resume normal game flow (day timer, etc.)
+	$Player_P1.show()
+	$Player_P1.set_process(true)
+	$Player_P1.set_physics_process(true)
+	set_day_timer_wait_time()
+	day_timer.start()
+	enemy_timer.start()
+
 # -------------------------------------------------------------------
 # ENEMY TIMER CALLBACK {every second}
 # -------------------------------------------------------------------
@@ -106,15 +139,15 @@ func _on_enemy_timer_timeout() -> void:
 # CHANGING THE DAY TIMER INTERVAL BASED ON DAY
 # -------------------------------------------------------------------
 func set_day_timer_wait_time() -> void:
-	if current_day < 70:
+	if current_day < 200:
 		# From day 1 to day 69 => every 2 seconds
-		day_timer.wait_time = 1
-	elif current_day < 80:
+		day_timer.wait_time = 0.5
+	elif current_day < 300:
 		# From day 70 to 79 => every 10 seconds
-		day_timer.wait_time = 10.0
-	elif current_day < 90:
+		day_timer.wait_time = 1.0
+	elif current_day < 350:
 		# From day 80 to 89 => every 20 seconds
-		day_timer.wait_time = 10.0
+		day_timer.wait_time = 5.0
 	else:
 		# From day 90 to 99 => every 20 seconds again
 		day_timer.wait_time = 20.0
@@ -124,16 +157,16 @@ func set_day_timer_wait_time() -> void:
 # SPAWNING LOGIC BASED ON DAY
 # -------------------------------------------------------------------
 func spawn_enemies_for_day(day: int) -> void:
-	if day < 70:
+	if day < 200:
 		if rng.randi_range(0, 100) < 5:
 			spawn_enemy()
-	elif day < 80:
+	elif day < 300:
 		if rng.randi_range(0, 100) < 15:
 			spawn_enemy()
-	elif day < 90:
+	elif day < 350:
 		if rng.randi_range(0, 100) < 20:
 			spawn_enemy()
-	elif day < 100:
+	elif day < 353:
 		if rng.randi_range(0, 100) < 40:
 			spawn_enemy()
 	else:

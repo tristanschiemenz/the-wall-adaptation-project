@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1nnrwgviecqc"]
+[gd_scene load_steps=6 format=3 uid="uid://d1nnrwgviecqc"]
 
 [ext_resource type="Script" path="res://scripts/phase1/bullet_p_1.gd" id="1_gfyps"]
 [ext_resource type="Texture2D" uid="uid://delp5x1l0lsxo" path="res://assets/phase1/bullet.png" id="2_rdpgq"]
+[ext_resource type="AudioStream" uid="uid://bbc7b2cjh2c1k" path="res://assets/phase1/sounds/shoot.mp3" id="3_fbsp5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmog2"]
 radius = 3.33333
@@ -29,3 +30,6 @@ scale = Vector2(2, 2)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="BulletArea"]
 shape = SubResource("CircleShape2D_c4520")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fbsp5")
