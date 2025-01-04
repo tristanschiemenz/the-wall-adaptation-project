@@ -52,7 +52,6 @@ signal cutscene_finished
 # Called when this node is added to the scene
 #
 func _ready():
-	set_kev_start_position(Vector2(600,500))
 	reset_all_progress()
 	start_timeline()
 	BulletSprite.hide()

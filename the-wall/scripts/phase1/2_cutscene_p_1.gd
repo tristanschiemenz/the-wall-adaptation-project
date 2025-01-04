@@ -156,7 +156,7 @@ func first_stop() -> void:
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "Probably both. The waiting… the scanning the horizon for Others… it's wearing.", 99999.0, Vector2(1120, 520), false)
+	await textbox_instance.show_textbox("Hifa", "Probably both. The waiting... the scanning the horizon for Others... it's wearing.", 99999.0, Vector2(1120, 520), false)
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
@@ -164,11 +164,11 @@ func first_stop() -> void:
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "I think about it all the time. We all do. If we fail… we become Others ourselves. Exiled to the sea.", 99999.0, Vector2(1120, 520), false)
+	await textbox_instance.show_textbox("Hifa", "I think about it all the time. We all do. If we fail... we become Others ourselves. Exiled to the sea.", 99999.0, Vector2(1120, 520), false)
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "And that's the end, basically. No chance of a future, of a normal life…", 99999.0, Vector2(630, 520), true)
+	await textbox_instance.show_textbox("Kavanagh", "And that's the end, basically. No chance of a future, of a normal life...", 99999.0, Vector2(630, 520), true)
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
@@ -176,7 +176,7 @@ func first_stop() -> void:
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "In the end, it's just fear that keeps us in line…", 99999.0, Vector2(630, 520), true)
+	await textbox_instance.show_textbox("Kavanagh", "In the end, it's just fear that keeps us in line...", 99999.0, Vector2(630, 520), true)
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
@@ -208,7 +208,7 @@ func first_stop() -> void:
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "Exactly. But if we survive the full term, then we get to choose, right? Some people go into security, others… become 'Breeders.'", 99999.0, Vector2(630, 520), true)
+	await textbox_instance.show_textbox("Kavanagh", "Exactly. But if we survive the full term, then we get to choose, right? Some people go into security, others... become 'Breeders.'", 99999.0, Vector2(630, 520), true)
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
@@ -216,7 +216,7 @@ func first_stop() -> void:
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "I never thought much about having children before. It felt like the world was so… broken.", 99999.0, Vector2(630, 520), true)
+	await textbox_instance.show_textbox("Kavanagh", "I never thought much about having children before. It felt like the world was so... broken.", 99999.0, Vector2(630, 520), true)
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
@@ -224,7 +224,7 @@ func first_stop() -> void:
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "Maybe… there's a chance to fix things if enough of us start caring again. If we choose to love instead of fear.", 99999.0, Vector2(630, 520), true)
+	await textbox_instance.show_textbox("Kavanagh", "Maybe... there's a chance to fix things if enough of us start caring again. If we choose to love instead of fear.", 99999.0, Vector2(630, 520), true)
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 	
@@ -232,11 +232,11 @@ func first_stop() -> void:
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Kavanagh", "Hifa… do you think that someone could be… us?", 99999.0, Vector2(630, 520), true)
+	await textbox_instance.show_textbox("Kavanagh", "Hifa... do you think that someone could be... us?", 99999.0, Vector2(630, 520), true)
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 
-	await textbox_instance.show_textbox("Hifa", "I think it could. If we can make it through this, if we don't get exiled, and if we can stand all the changes after the Wall… I'd like to find out.", 99999.0, Vector2(1120, 520), false)
+	await textbox_instance.show_textbox("Hifa", "I think it could. If we can make it through this, if we don't get exiled, and if we can stand all the changes after the Wall... I'd like to find out.", 99999.0, Vector2(1120, 520), false)
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 

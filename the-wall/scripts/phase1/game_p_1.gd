@@ -162,16 +162,16 @@ func _on_enemy_timer_timeout() -> void:
 # -------------------------------------------------------------------
 func set_day_timer_wait_time() -> void:
 	if current_day < 200:
-		# From day 1 to day 69 => every 2 seconds
-		day_timer.wait_time = 0.1
+
+		day_timer.wait_time = 0.5
 	elif current_day < 300:
-		# From day 70 to 79 => every 10 seconds
-		day_timer.wait_time = 0.1
+	
+		day_timer.wait_time = 1
 	elif current_day < 350:
-		# From day 80 to 89 => every 20 seconds
+	
 		day_timer.wait_time = 5.0
 	else:
-		# From day 90 to 99 => every 20 seconds again
+
 		day_timer.wait_time = 20.0
 
 
