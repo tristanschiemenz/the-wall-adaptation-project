@@ -27,7 +27,7 @@ animations = [{
 }]
 
 [node name="player_p2" type="CharacterBody2D"]
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 script = ExtResource("1_eiwke")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

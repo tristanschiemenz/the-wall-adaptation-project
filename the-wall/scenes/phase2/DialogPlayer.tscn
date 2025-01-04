@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://b77f7prnfeif5"]
+
+[ext_resource type="Texture2D" uid="uid://bju3ae3q31vjj" path="res://assets/phase2/textbox.png" id="1_eqd66"]
+[ext_resource type="Script" path="res://scripts/phase2/dialog_player.gd" id="1_yiupt"]
+[ext_resource type="FontFile" uid="uid://day2ceg8scrki" path="res://assets/ByteBounce.ttf" id="2_hm2ue"]
+
+[node name="DialogPlayer" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_yiupt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 2)
+texture = ExtResource("1_eqd66")
+
+[node name="name_label" type="Label" parent="."]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 0
+offset_left = -581.667
+offset_top = -76.6667
+offset_right = -541.667
+offset_bottom = -53.6667
+theme_override_fonts/font = ExtResource("2_hm2ue")
+theme_override_font_sizes/font_size = 64
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dialog_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -548.0
+offset_top = 33.0
+offset_right = 647.0
+offset_bottom = 273.0
+theme_override_fonts/font = ExtResource("2_hm2ue")
+theme_override_font_sizes/font_size = 48
+autowrap_mode = 3
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

@@ -4,6 +4,5 @@
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_dr470")
-autoplay = true
 bus = &"Music"
 parameters/looping = true
