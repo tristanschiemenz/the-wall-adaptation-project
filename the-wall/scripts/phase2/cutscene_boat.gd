@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var kavanagh: AnimatedSprite2D = $Kavanagh
-@onready var hifa: AnimatedSprite2D = $Hifa
 @onready var dialog_player: Control = $Camera2D/DialogPlayer
 @onready var main_animation_player: AnimationPlayer = $MainAnimationPlayer
 @onready var fade_out = preload("res://scenes/fade_layer.tscn")
