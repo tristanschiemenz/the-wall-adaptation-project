@@ -82,8 +82,10 @@ animation = &"boom"
 
 [node name="explosion_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_aa1r5")
+bus = &"SFX"
 
 [node name="scream_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_k2slc")
+bus = &"SFX"
 
 [connection signal="area_entered" from="EnemyArea" to="." method="_on_enemy_area_area_entered"]

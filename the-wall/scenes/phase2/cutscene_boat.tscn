@@ -22,22 +22,22 @@
 [ext_resource type="Texture2D" uid="uid://c73ohj17ro4xa" path="res://assets/phase2/captain_2.png" id="17_xn4fj"]
 [ext_resource type="Texture2D" uid="uid://bwpkbcv4bb5ua" path="res://assets/phase2/captain_3.png" id="18_neuvh"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fr5xm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3vo7"]
 texture = ExtResource("1_58uo7")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7hnt"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7oll"]
 texture = ExtResource("2_b7xjk")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w2p6s"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sqatg"]
 texture = ExtResource("3_sjru4")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8o3g"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syra5"]
 texture = ExtResource("4_4jh6y")
 texture_region_size = Vector2i(64, 64)
 use_texture_padding = false
@@ -45,10 +45,10 @@ use_texture_padding = false
 
 [sub_resource type="TileSet" id="TileSet_k45lh"]
 tile_size = Vector2i(64, 64)
-sources/4 = SubResource("TileSetAtlasSource_fr5xm")
-sources/5 = SubResource("TileSetAtlasSource_c7hnt")
-sources/6 = SubResource("TileSetAtlasSource_w2p6s")
-sources/7 = SubResource("TileSetAtlasSource_p8o3g")
+sources/4 = SubResource("TileSetAtlasSource_x3vo7")
+sources/5 = SubResource("TileSetAtlasSource_k7oll")
+sources/6 = SubResource("TileSetAtlasSource_sqatg")
+sources/7 = SubResource("TileSetAtlasSource_syra5")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bix7f"]
 animations = [{

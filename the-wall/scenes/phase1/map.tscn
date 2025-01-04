@@ -195,10 +195,12 @@ autostart = true
 
 [node name="fly_by_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_y4kne")
+bus = &"SFX"
 
 [node name="ambient_noise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_8kcsf")
 autoplay = true
+bus = &"SFX"
 
 [connection signal="timeout" from="RainTimer" to="." method="_on_rain_timer_timeout"]
 [connection signal="timeout" from="Flicker_timer" to="." method="_on_flicker_timer_timeout"]
