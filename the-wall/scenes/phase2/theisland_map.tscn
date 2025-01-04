@@ -1,12 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://c052hlmsany8a"]
+[gd_scene load_steps=22 format=3 uid="uid://c052hlmsany8a"]
 
 [ext_resource type="Texture2D" uid="uid://wufgfp8jsy3v" path="res://assets/phase2/raft.png" id="1_a36jm"]
 [ext_resource type="Script" path="res://scripts/phase2/theisland_map.gd" id="1_eyv8i"]
 [ext_resource type="Texture2D" uid="uid://bwjscsvep7cmy" path="res://assets/phase1/ocean_animated.tres" id="5_kki3g"]
 [ext_resource type="PackedScene" uid="uid://ci0oyjxlnaq0m" path="res://scenes/phase2/player_p2.tscn" id="6_81jc4"]
 [ext_resource type="Texture2D" uid="uid://b4as7us1g33pt" path="res://assets/phase2/SandLight.png" id="6_xdypc"]
+[ext_resource type="Texture2D" uid="uid://bm3jqqvfgd51e" path="res://assets/phase1/captain_1.png" id="8_1h7ss"]
 [ext_resource type="Texture2D" uid="uid://djdqlafimijan" path="res://assets/phase2/other_1.png" id="8_6cnuf"]
+[ext_resource type="Texture2D" uid="uid://5ea7t140wvg1" path="res://assets/phase1/hifa_1.png" id="9_dx4s1"]
 [ext_resource type="PackedScene" uid="uid://b77f7prnfeif5" path="res://scenes/phase2/DialogPlayer.tscn" id="9_o70ok"]
+[ext_resource type="Texture2D" uid="uid://bfyblqhvwe0hw" path="res://assets/phase1/other_1.png" id="10_bveuw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bcd27"]
 texture = ExtResource("1_a36jm")
@@ -197,6 +200,32 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="water_dive_area"]
 position = Vector2(573, 24.5)
 shape = SubResource("RectangleShape2D_kphop")
+
+[node name="npcs" type="Node" parent="."]
+
+[node name="Captain" type="Sprite2D" parent="npcs"]
+texture_filter = 1
+position = Vector2(865, 1447)
+scale = Vector2(2, 2)
+texture = ExtResource("8_1h7ss")
+
+[node name="Hifa" type="Sprite2D" parent="npcs"]
+texture_filter = 1
+position = Vector2(731, 961)
+scale = Vector2(2, 2)
+texture = ExtResource("9_dx4s1")
+
+[node name="James" type="Sprite2D" parent="npcs"]
+texture_filter = 1
+position = Vector2(286, 1011)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_bveuw")
+
+[node name="Hughes" type="Sprite2D" parent="npcs"]
+texture_filter = 1
+position = Vector2(904, 1240)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_bveuw")
 
 [connection signal="body_entered" from="fishing_quest_dealer" to="." method="_on_fishing_quest_dealer_body_entered"]
 [connection signal="body_entered" from="water_dive_area" to="." method="_on_water_dive_area_body_entered"]
