@@ -233,6 +233,7 @@ texture = ExtResource("10_ij5om")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_umm1v")
 autoplay = true
+bus = &"Ambient"
 parameters/looping = false
 
 [connection signal="body_entered" from="fishing_quest_dealer" to="." method="_on_fishing_quest_dealer_body_entered"]

@@ -44,11 +44,15 @@ func _ending_dialog() -> void:
 	await _wait_for_accept()
 	await get_tree().create_timer(0.5).timeout
 
-	dialog.display_text("Hifa", "Then tell me a story.")
+	dialog.display_text("Hifa", "If we have to wait, then tell me a story.")
 	await _wait_for_accept()
 	await get_tree().create_timer(0.5).timeout
 
 	dialog.display_text("Kavanagh", "A story? I can't think of one right now. Or... wait, maybe I know one.")
+	await _wait_for_accept()
+	await get_tree().create_timer(0.5).timeout
+	
+	dialog.display_text("Kavanagh", "It would begin like this...")
 	await _wait_for_accept()
 	await get_tree().create_timer(0.5).timeout
 

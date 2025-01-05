@@ -3,7 +3,7 @@ extends Control
 @onready var audio_num_lbl: Label = $HBoxContainer/audio_num_lbl
 @onready var h_slider: HSlider = $HBoxContainer/HSlider
 
-@export_enum("Master", "Music", "SFX", "Voices") var bus_name : String
+@export_enum("Master", "Music", "SFX", "Ambient") var bus_name : String
 
 var bus_index : int = 0
 

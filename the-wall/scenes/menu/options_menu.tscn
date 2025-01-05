@@ -82,7 +82,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_8tlic")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8iksb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v71fo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ugeyf")
-text = "Exit
+text = "Back
 "
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
