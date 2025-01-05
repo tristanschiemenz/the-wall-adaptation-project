@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bwjscsvep7cmy" path="res://assets/phase1/ocean_animated.tres" id="5_kki3g"]
 [ext_resource type="PackedScene" uid="uid://ci0oyjxlnaq0m" path="res://scenes/phase2/player_p2.tscn" id="6_81jc4"]
 [ext_resource type="Texture2D" uid="uid://b4as7us1g33pt" path="res://assets/phase2/SandLight.png" id="6_xdypc"]
+[ext_resource type="Texture2D" uid="uid://bfyblqhvwe0hw" path="res://assets/phase1/other_1.png" id="7_b0evn"]
 [ext_resource type="Texture2D" uid="uid://cqxoa1bdk7a3q" path="res://assets/phase2/TheWallCharachters/captain1.png" id="7_ngmmu"]
 [ext_resource type="Texture2D" uid="uid://nvf50h06k3ow" path="res://assets/phase3/hifa1.png" id="8_g5bou"]
 [ext_resource type="Texture2D" uid="uid://tscghbe5ichs" path="res://assets/phase2/TheWallCharachters/james1.png" id="9_nfljm"]
@@ -87,8 +88,6 @@ b = Vector2(1270, 1310)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm4nc"]
 size = Vector2(40, 156)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v8jvx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g3mur"]
 radius = 22.0
@@ -189,7 +188,7 @@ input_pickable = false
 texture_filter = 1
 position = Vector2(1232, 784)
 scale = Vector2(1.5, 1.5)
-texture = SubResource("CompressedTexture2D_v8jvx")
+texture = ExtResource("7_b0evn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fishing_quest_dealer"]
 position = Vector2(1230, 785)
