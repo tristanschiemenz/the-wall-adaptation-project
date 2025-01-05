@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bpiu7m24amhbu" path="res://assets/phase1/wall_stair.png" id="3_sjru4"]
 [ext_resource type="Texture2D" uid="uid://bwjscsvep7cmy" path="res://assets/phase1/ocean_animated.tres" id="4_4jh6y"]
 [ext_resource type="Texture2D" uid="uid://fo36e5ynoyq5" path="res://assets/phase2/boat.png" id="6_wo2n4"]
-[ext_resource type="Texture2D" uid="uid://vnig2lw70j7l" path="res://assets/phase2/TheWallCharachters/kav1.png" id="7_ben0e"]
-[ext_resource type="Texture2D" uid="uid://c5qfldujif7ia" path="res://assets/phase2/TheWallCharachters/kav2.png" id="8_f6fui"]
-[ext_resource type="Texture2D" uid="uid://c75bvfmiew06" path="res://assets/phase2/TheWallCharachters/kav3.png" id="9_5cfcf"]
-[ext_resource type="Texture2D" uid="uid://nvf50h06k3ow" path="res://assets/phase2/TheWallCharachters/hifa1.png" id="10_gyawv"]
-[ext_resource type="Texture2D" uid="uid://da41u672e7s5c" path="res://assets/phase2/TheWallCharachters/hifa2.png" id="11_sqi0o"]
-[ext_resource type="Texture2D" uid="uid://cbp8f8o3o26g3" path="res://assets/phase2/TheWallCharachters/hifa3.png" id="12_rx6h7"]
+[ext_resource type="Texture2D" uid="uid://vnig2lw70j7l" path="res://assets/phase3/kav1.png" id="7_ben0e"]
+[ext_resource type="Texture2D" uid="uid://c5qfldujif7ia" path="res://assets/phase3/kav2.png" id="8_f6fui"]
+[ext_resource type="Texture2D" uid="uid://c75bvfmiew06" path="res://assets/phase3/kav3.png" id="9_5cfcf"]
+[ext_resource type="Texture2D" uid="uid://nvf50h06k3ow" path="res://assets/phase3/hifa1.png" id="10_gyawv"]
+[ext_resource type="Texture2D" uid="uid://da41u672e7s5c" path="res://assets/phase3/hifa2.png" id="11_sqi0o"]
+[ext_resource type="Texture2D" uid="uid://cbp8f8o3o26g3" path="res://assets/phase3/hifa3.png" id="12_rx6h7"]
 [ext_resource type="PackedScene" uid="uid://b77f7prnfeif5" path="res://scenes/phase2/DialogPlayer.tscn" id="13_5quxn"]
 [ext_resource type="Texture2D" uid="uid://0scg1fugftcb" path="res://assets/phase2/TheWallCharachters/hughes1.png" id="13_co02k"]
 [ext_resource type="Texture2D" uid="uid://deigypx3pggjw" path="res://assets/phase2/TheWallCharachters/hughes2.png" id="14_0bdrm"]
@@ -27,22 +27,22 @@
 [ext_resource type="AudioStream" uid="uid://rw2qbvyvgeiu" path="res://assets/phase2/Door Creaking Sound Effect.mp3" id="22_tsjxm"]
 [ext_resource type="AudioStream" uid="uid://b5pxaipmcev54" path="res://assets/phase1/sounds/meeresrauschen-152733.mp3" id="26_5at1g"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3vo7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cohqj"]
 texture = ExtResource("1_58uo7")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7oll"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ktk1"]
 texture = ExtResource("2_b7xjk")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sqatg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2tt3u"]
 texture = ExtResource("3_sjru4")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syra5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b70qe"]
 texture = ExtResource("4_4jh6y")
 texture_region_size = Vector2i(64, 64)
 use_texture_padding = false
@@ -50,10 +50,10 @@ use_texture_padding = false
 
 [sub_resource type="TileSet" id="TileSet_k45lh"]
 tile_size = Vector2i(64, 64)
-sources/4 = SubResource("TileSetAtlasSource_x3vo7")
-sources/5 = SubResource("TileSetAtlasSource_k7oll")
-sources/6 = SubResource("TileSetAtlasSource_sqatg")
-sources/7 = SubResource("TileSetAtlasSource_syra5")
+sources/4 = SubResource("TileSetAtlasSource_cohqj")
+sources/5 = SubResource("TileSetAtlasSource_5ktk1")
+sources/6 = SubResource("TileSetAtlasSource_2tt3u")
+sources/7 = SubResource("TileSetAtlasSource_b70qe")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bix7f"]
 animations = [{

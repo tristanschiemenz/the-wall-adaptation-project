@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c052hlmsany8a"]
+[gd_scene load_steps=24 format=3 uid="uid://c052hlmsany8a"]
 
 [ext_resource type="Texture2D" uid="uid://wufgfp8jsy3v" path="res://assets/phase2/raft.png" id="1_a36jm"]
 [ext_resource type="Script" path="res://scripts/phase2/theisland_map.gd" id="1_eyv8i"]
@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://ci0oyjxlnaq0m" path="res://scenes/phase2/player_p2.tscn" id="6_81jc4"]
 [ext_resource type="Texture2D" uid="uid://b4as7us1g33pt" path="res://assets/phase2/SandLight.png" id="6_xdypc"]
 [ext_resource type="Texture2D" uid="uid://cqxoa1bdk7a3q" path="res://assets/phase2/TheWallCharachters/captain1.png" id="7_ngmmu"]
-[ext_resource type="Texture2D" uid="uid://nvf50h06k3ow" path="res://assets/phase2/TheWallCharachters/hifa1.png" id="8_g5bou"]
+[ext_resource type="Texture2D" uid="uid://nvf50h06k3ow" path="res://assets/phase3/hifa1.png" id="8_g5bou"]
 [ext_resource type="Texture2D" uid="uid://tscghbe5ichs" path="res://assets/phase2/TheWallCharachters/james1.png" id="9_nfljm"]
 [ext_resource type="PackedScene" uid="uid://b77f7prnfeif5" path="res://scenes/phase2/DialogPlayer.tscn" id="9_o70ok"]
 [ext_resource type="Texture2D" uid="uid://0scg1fugftcb" path="res://assets/phase2/TheWallCharachters/hughes1.png" id="10_ij5om"]
+[ext_resource type="AudioStream" uid="uid://b5pxaipmcev54" path="res://assets/phase1/sounds/meeresrauschen-152733.mp3" id="11_umm1v"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bcd27"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v0cwq"]
 texture = ExtResource("1_a36jm")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -31,7 +32,7 @@ texture_region_size = Vector2i(64, 64)
 2:3/0 = 0
 3:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rm7n7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6lx3c"]
 texture = ExtResource("6_xdypc")
 0:0/0 = 0
 1:0/0 = 0
@@ -58,15 +59,15 @@ texture = ExtResource("6_xdypc")
 4:3/0 = 0
 5:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gye1a"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wk5vn"]
 texture = ExtResource("5_kki3g")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_i2sio"]
-sources/0 = SubResource("TileSetAtlasSource_bcd27")
-sources/1 = SubResource("TileSetAtlasSource_rm7n7")
-sources/4 = SubResource("TileSetAtlasSource_gye1a")
+sources/0 = SubResource("TileSetAtlasSource_v0cwq")
+sources/1 = SubResource("TileSetAtlasSource_6lx3c")
+sources/4 = SubResource("TileSetAtlasSource_wk5vn")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_58d5a"]
 a = Vector2(105, 1314)
@@ -226,8 +227,13 @@ texture = ExtResource("9_nfljm")
 [node name="Hughes" type="Sprite2D" parent="npcs"]
 texture_filter = 1
 position = Vector2(904, 1240)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 texture = ExtResource("10_ij5om")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_umm1v")
+autoplay = true
+parameters/looping = false
 
 [connection signal="body_entered" from="fishing_quest_dealer" to="." method="_on_fishing_quest_dealer_body_entered"]
 [connection signal="body_entered" from="water_dive_area" to="." method="_on_water_dive_area_body_entered"]

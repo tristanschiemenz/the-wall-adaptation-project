@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://ci0oyjxlnaq0m"]
 
 [ext_resource type="Script" path="res://scripts/phase2/player_p2.gd" id="1_eiwke"]
-[ext_resource type="Texture2D" uid="uid://vnig2lw70j7l" path="res://assets/phase2/TheWallCharachters/kav1.png" id="2_h41vl"]
-[ext_resource type="Texture2D" uid="uid://c5qfldujif7ia" path="res://assets/phase2/TheWallCharachters/kav2.png" id="3_bb8b6"]
-[ext_resource type="Texture2D" uid="uid://c75bvfmiew06" path="res://assets/phase2/TheWallCharachters/kav3.png" id="4_wao3l"]
+[ext_resource type="Texture2D" uid="uid://vnig2lw70j7l" path="res://assets/phase3/kav1.png" id="2_h41vl"]
+[ext_resource type="Texture2D" uid="uid://c5qfldujif7ia" path="res://assets/phase3/kav2.png" id="3_bb8b6"]
+[ext_resource type="Texture2D" uid="uid://c75bvfmiew06" path="res://assets/phase3/kav3.png" id="4_wao3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ienr7"]
 size = Vector2(18, 20.6667)

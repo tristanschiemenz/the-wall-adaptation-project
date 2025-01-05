@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5qfldujif7ia"
-path="res://.godot/imported/kav2.png-0ceade550373f661fc42054c038d6564.ctex"
+path="res://.godot/imported/kav2.png-27370696777d542bcad984b5e4cc26f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phase2/TheWallCharachters/kav2.png"
-dest_files=["res://.godot/imported/kav2.png-0ceade550373f661fc42054c038d6564.ctex"]
+source_file="res://assets/phase3/kav2.png"
+dest_files=["res://.godot/imported/kav2.png-27370696777d542bcad984b5e4cc26f0.ctex"]
 
 [params]
 

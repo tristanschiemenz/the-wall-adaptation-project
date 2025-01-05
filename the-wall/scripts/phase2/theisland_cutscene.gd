@@ -10,6 +10,8 @@ func _ready() -> void:
 func _cut_scene_finished():
 	var fade_intstance = fade_out.instantiate()
 	add_child(fade_intstance)
-	fade_intstance.fade_in_black_with_text("Next Scene after this",8.0)
+	fade_intstance.fade_in_black_with_text("Drifting into the vast ocean...",8.0)
 	await get_tree().create_timer(10.0).timeout
 	fade_intstance.queue_free()
+	
+	get_tree().change_scene_to_file("res://scenes/phase3/ending_scene.tscn")
