@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dd57epf3blaua"]
+[gd_scene load_steps=13 format=3 uid="uid://dd57epf3blaua"]
 
 [ext_resource type="Script" path="res://scenes/phase1/3_cutscene_p_1.gd" id="1_1vbm5"]
 [ext_resource type="Texture2D" uid="uid://bm3jqqvfgd51e" path="res://assets/phase1/captain_1.png" id="1_67oav"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cqessicmsyu6f" path="res://assets/phase1/captain_3.png" id="3_gcvad"]
 [ext_resource type="Texture2D" uid="uid://bsfhqbdc1a82g" path="res://assets/phase1/player_1.png" id="6_xgtj8"]
 [ext_resource type="Texture2D" uid="uid://dqtipymf6usmc" path="res://assets/phase1/palyer_2.png" id="7_5wk55"]
+[ext_resource type="AudioStream" uid="uid://bcjxts23eokcg" path="res://assets/phase1/sounds/footsteps-boots-101657 (mp3cut.net).mp3" id="8_hafkn"]
 [ext_resource type="Texture2D" uid="uid://dcan0cnkjr7ql" path="res://assets/phase1/palyer_3.png" id="8_qlbce"]
 
 [sub_resource type="Curve2D" id="Curve2D_pf55u"]
@@ -83,3 +84,9 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_qy17w")
 animation = &"walk"
+
+[node name="FootSteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_hafkn")
+volume_db = -10.0
+
+[connection signal="finished" from="FootSteps" to="." method="_on_foot_steps_finished"]

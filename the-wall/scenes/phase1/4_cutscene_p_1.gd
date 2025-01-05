@@ -48,17 +48,19 @@ extends Node2D
 
 signal cutscene_finished
 
+var steps_playing = false
 #
 # Called when this node is added to the scene
 #
 func _ready():
+	set_kev_start_position(Vector2(1000,600))
 	reset_all_progress()
 	start_timeline()
 	BulletSprite.hide()
 	Bullet2Sprite.hide()
 
 #
-# 1) Reset progress_ratio to 0.0 for each follower
+#1) Reset progress_ratio to 0.0 for each follower
 #
 func reset_all_progress():
 	KevPathFollower.progress_ratio = 0.0
@@ -72,9 +74,9 @@ func reset_all_progress():
 func set_kev_start_position(start_pos: Vector2):
 	var curve = KevPath.curve
 	
-	# Check if the path currently has just one point (the end).
+	#Check if the path currently has just one point (the end).
 	if curve.get_point_count() == 1:
-		# Insert the start as the first point, and keep the existing end as the second point.
+		#Insert the start as the first point, and keep the existing end as the second point.
 		var end_pos = curve.get_point_position(0)
 		curve.clear_points()
 		curve.add_point(start_pos)
@@ -133,6 +135,9 @@ func move_path_to_end(follower, speed) -> void:
 	follower.progress_ratio = 0.0
 	
 	while follower.progress_ratio < 1.0:
+		if steps_playing == false:
+			$FootSteps.play()
+			steps_playing = true 
 		var delta = get_process_delta_time()
 		var increment = (speed / path_length) * delta
 		follower.progress_ratio += increment
@@ -202,6 +207,9 @@ func move_multiple_to_end(entities: Array) -> void:
 		path_lengths.append(path2d.curve.get_baked_length())
 	
 	while true:
+		if steps_playing == false:
+			$FootSteps.play()
+			steps_playing = true 
 		var delta = get_process_delta_time()
 		var all_done = true
 		
@@ -245,6 +253,8 @@ func speech1():
 
 
 func speech2():
+	KevSprite.flip_h = false
+	HifaSprite.flip_h = false
 	var textbox_instance = textbox_scene.instantiate()
 	add_child(textbox_instance)
 	
@@ -333,7 +343,7 @@ func speech3():
 	
 	await shoot_cap_other()
 	
-	await textbox_instance.show_textbox("Kavanagh", "What will you do now, Hifa? There are too many of us for just the two of you.", 99999.0, Vector2(250, 680), true)
+	await textbox_instance.show_textbox("Kavanagh", "They're through the Wall... we failed. We'll be sent to sea for letting them in.", 99999.0, Vector2(250, 680), true)
 	await wait_for_enter()
 	await get_tree().create_timer(.5).timeout
 	
@@ -344,3 +354,8 @@ func speech3():
 	fade_intstance.fade_in_black_with_text("We will get send to sea",8.0)
 	await get_tree().create_timer(10.0).timeout
 	emit_signal("cutscene_finished")
+	get_tree().change_scene_to_file("res://scenes/phase2/cutscene_boat.tscn")
+
+
+func _on_foot_steps_finished() -> void:
+	steps_playing = false

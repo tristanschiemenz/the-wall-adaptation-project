@@ -34,6 +34,7 @@ func _on_rain_timer_timeout() -> void:
 	# 1) Decide if we show the RainRect
 	var rand_num = rng.randi_range(0, 100)
 	if rand_num < 20:
+		$rain_sound.play(0)
 		$RainRect.show()
 
 		# 2) Create a one-shot timer with random time between 15-30 seconds
@@ -53,6 +54,7 @@ func _on_rain_timer_timeout() -> void:
 func _on_hide_timer_timeout(timer: Timer) -> void:
 	$RainRect.hide()
 	timer.queue_free()
+	$rain_sound.stop()
 
 
 func _on_fly_by_timer_timeout() -> void:
@@ -63,3 +65,7 @@ func _on_fly_by_timer_timeout() -> void:
 
 func _on_ambient_noise_finished() -> void:
 	$ambient_noise.play(0)
+
+
+func _on_sea_noise_finished() -> void:
+	$sea_noise.play(0)

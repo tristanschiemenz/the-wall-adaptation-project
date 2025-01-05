@@ -8,7 +8,7 @@ const SPEED = 300.0
 var can_shoot: bool = true
 var shoot_timer: float = 0.5
 
-
+var steps_playing: bool = false
 
 func _physics_process(delta: float) -> void:
 	velocity = Vector2.ZERO  # Reset velocity each frame
@@ -27,6 +27,9 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * SPEED
 	if velocity.x != 0 or velocity.y != 0:
+		if steps_playing == false:
+			$FootSteps.play()
+			steps_playing = true
 		$AnimatedSprite2D.play()
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = velocity.x < 0
@@ -57,3 +60,7 @@ func _process(delta: float) -> void:
 		shoot()
 		shoot_timer = shoot_cooldown
 		
+
+
+func _on_foot_steps_finished() -> void:
+	steps_playing = false

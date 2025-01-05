@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cyhahriqanfjv"]
+[gd_scene load_steps=14 format=3 uid="uid://cyhahriqanfjv"]
 
 [ext_resource type="Script" path="res://scripts/phase1/2_cutscene_p_1.gd" id="1_pdfqe"]
 [ext_resource type="Texture2D" uid="uid://5ea7t140wvg1" path="res://assets/phase1/hifa_1.png" id="3_udvb4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bsfhqbdc1a82g" path="res://assets/phase1/player_1.png" id="6_rdice"]
 [ext_resource type="Texture2D" uid="uid://dqtipymf6usmc" path="res://assets/phase1/palyer_2.png" id="7_kwwt3"]
 [ext_resource type="Texture2D" uid="uid://dcan0cnkjr7ql" path="res://assets/phase1/palyer_3.png" id="8_4326j"]
+[ext_resource type="AudioStream" uid="uid://bcjxts23eokcg" path="res://assets/phase1/sounds/footsteps-boots-101657 (mp3cut.net).mp3" id="9_ogoei"]
 [ext_resource type="Texture2D" uid="uid://c54dffb8x3hso" path="res://assets/phase1/2d_lights_and_shadows_neutral_point_light.webp" id="9_w77eq"]
 
 [sub_resource type="Curve2D" id="Curve2D_fh83m"]
@@ -90,3 +91,9 @@ position = Vector2(1124, 711)
 scale = Vector2(1.44141, 1.44141)
 energy = 0.8
 texture = ExtResource("9_w77eq")
+
+[node name="FootSteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_ogoei")
+volume_db = -10.0
+
+[connection signal="finished" from="FootSteps" to="." method="_on_foot_steps_finished"]

@@ -22,6 +22,8 @@ var is_captain_moving = false
 
 var firstStop = false
 var secondStop = false
+
+var steps_playing = false
 func _ready():
 	# Get the actual pixel length of each path
 	kev_path_length = kev_path.curve.get_baked_length()
@@ -52,6 +54,9 @@ func _ready():
 
 func _process(delta):
 	if is_kev_moving:
+		if steps_playing == false:
+			$FootSteps.play()
+			steps_playing = true 
 		kev_sprite.animation = "walk"
 		kev_sprite.play()
 		# Advance Kevin's progress by the fraction of the path
@@ -72,6 +77,9 @@ func _process(delta):
 	else:
 		kev_sprite.stop()
 	if is_captain_moving:
+		if steps_playing == false:
+			$FootSteps.play()
+			steps_playing = true 
 		captain_sprite.animation = "walk"
 		captain_sprite.play()
 		var increment = (captain_speed / captain_path_length) * delta
@@ -168,7 +176,8 @@ func last_stop():
 	get_tree().change_scene_to_file("res://scenes/phase1/game_p_1.tscn")
 	#emit_signal("cutscene_finished")
 # Public methods:
-func start_kevin_walk(): 
+func start_kevin_walk():
+
 	is_kev_moving = true
 
 func stop_kevin_walk():
@@ -179,3 +188,7 @@ func start_captain_walk():
 
 func stop_captain_walk():
 	is_captain_moving = false
+
+
+func _on_foot_steps_finished() -> void:
+	steps_playing = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://1yrigeplkjdx"]
+[gd_scene load_steps=31 format=3 uid="uid://1yrigeplkjdx"]
 
 [ext_resource type="Script" path="res://scenes/phase1/4_cutscene_p_1.gd" id="1_c0egl"]
 [ext_resource type="Texture2D" uid="uid://bsfhqbdc1a82g" path="res://assets/phase1/player_1.png" id="2_icis4"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cwmgebm0gl8hm" path="res://assets/phase1/other_3.png" id="13_f3ikg"]
 [ext_resource type="Texture2D" uid="uid://b83xm3mg781f" path="res://assets/phase1/boat_with_other_4.png" id="14_foph8"]
 [ext_resource type="Texture2D" uid="uid://delp5x1l0lsxo" path="res://assets/phase1/bullet.png" id="16_pd05g"]
+[ext_resource type="AudioStream" uid="uid://bcjxts23eokcg" path="res://assets/phase1/sounds/footsteps-boots-101657 (mp3cut.net).mp3" id="16_xd47f"]
 
 [sub_resource type="Curve2D" id="Curve2D_fkm4i"]
 _data = {
@@ -279,3 +280,9 @@ rotation = 0.00766856
 rotation = 1.5708
 scale = Vector2(2, 2)
 texture = ExtResource("16_pd05g")
+
+[node name="FootSteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_xd47f")
+volume_db = -10.0
+
+[connection signal="finished" from="FootSteps" to="." method="_on_foot_steps_finished"]

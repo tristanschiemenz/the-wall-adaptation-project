@@ -37,6 +37,8 @@ var kev_stopped_once  = false
 # For convenience, we can signal when the entire cutscene is done
 signal cutscene_finished
 
+var steps_playing = false
+
 func _ready():
 	# 1) Calculate each path's length (in pixels)
 	#    (Make sure your captainPath and KevPath have valid curves!)
@@ -58,6 +60,9 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if is_captain_moving:
+		if steps_playing == false:
+			$FootSteps.play()
+			steps_playing = true 
 		# If captainSprite is an AnimatedSprite2D or AnimationPlayer, you can trigger the walk animation here
 		captain_sprite.play("walk")
 
@@ -82,6 +87,9 @@ func _process(delta: float) -> void:
 
 
 	if is_kev_moving:
+		if steps_playing == false:
+			$FootSteps.play()
+			steps_playing = true 
 		kev_sprite.play("walk")
 		var increment_kev = (kev_speed / kev_path_length) * delta
 		kev_path_follower.progress_ratio += increment_kev
@@ -191,3 +199,7 @@ func start_kev_walk():
 
 func stop_kev_walk():
 	is_kev_moving = false
+
+
+func _on_foot_steps_finished() -> void:
+	steps_playing = false
