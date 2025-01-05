@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjlhuyif6uwk4"
-path="res://.godot/imported/james.png-ada00616c2d9a4d190da7452c2dcc085.ctex"
+uid="uid://0scg1fugftcb"
+path="res://.godot/imported/hughes1.png-e5e2748949154be7d8ab1c12de8df929.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phase2/james.png"
-dest_files=["res://.godot/imported/james.png-ada00616c2d9a4d190da7452c2dcc085.ctex"]
+source_file="res://assets/phase2/TheWallCharachters/hughes1.png"
+dest_files=["res://.godot/imported/hughes1.png-e5e2748949154be7d8ab1c12de8df929.ctex"]
 
 [params]
 

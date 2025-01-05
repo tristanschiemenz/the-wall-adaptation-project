@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jkgm7gqvhoj1"
-path="res://.godot/imported/hifa_3.png-547d64164b83a61d1eee06ca277d18cb.ctex"
+uid="uid://i7ruanopb40r"
+path="res://.godot/imported/captain2.png-a92ad66ec80f89fe3abbc13ddd141446.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phase2/hifa_3.png"
-dest_files=["res://.godot/imported/hifa_3.png-547d64164b83a61d1eee06ca277d18cb.ctex"]
+source_file="res://assets/phase2/TheWallCharachters/captain2.png"
+dest_files=["res://.godot/imported/captain2.png-a92ad66ec80f89fe3abbc13ddd141446.ctex"]
 
 [params]
 

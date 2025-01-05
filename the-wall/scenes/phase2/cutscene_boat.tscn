@@ -6,23 +6,26 @@
 [ext_resource type="Texture2D" uid="uid://bpiu7m24amhbu" path="res://assets/phase1/wall_stair.png" id="3_sjru4"]
 [ext_resource type="Texture2D" uid="uid://bwjscsvep7cmy" path="res://assets/phase1/ocean_animated.tres" id="4_4jh6y"]
 [ext_resource type="Texture2D" uid="uid://fo36e5ynoyq5" path="res://assets/phase2/boat.png" id="6_wo2n4"]
-[ext_resource type="Texture2D" uid="uid://1vopw2fw2hgu" path="res://assets/phase2/palyer_2.png" id="6_yy344"]
-[ext_resource type="Texture2D" uid="uid://b2135w4gvmye" path="res://assets/phase2/hifa_1.png" id="7_0d8ij"]
-[ext_resource type="Texture2D" uid="uid://cyaaytewnfcuo" path="res://assets/phase2/palyer_3.png" id="7_temyp"]
-[ext_resource type="Texture2D" uid="uid://dus2bx3hpaqgt" path="res://assets/phase2/player_1.png" id="8_6mq7s"]
-[ext_resource type="Texture2D" uid="uid://dibk3i2athw3a" path="res://assets/phase2/hifa_2.png" id="8_v8kfc"]
-[ext_resource type="Texture2D" uid="uid://jkgm7gqvhoj1" path="res://assets/phase2/hifa_3.png" id="9_jnn3u"]
+[ext_resource type="Texture2D" uid="uid://vnig2lw70j7l" path="res://assets/phase2/TheWallCharachters/kav1.png" id="7_ben0e"]
+[ext_resource type="Texture2D" uid="uid://c5qfldujif7ia" path="res://assets/phase2/TheWallCharachters/kav2.png" id="8_f6fui"]
+[ext_resource type="Texture2D" uid="uid://c75bvfmiew06" path="res://assets/phase2/TheWallCharachters/kav3.png" id="9_5cfcf"]
+[ext_resource type="Texture2D" uid="uid://nvf50h06k3ow" path="res://assets/phase2/TheWallCharachters/hifa1.png" id="10_gyawv"]
+[ext_resource type="Texture2D" uid="uid://da41u672e7s5c" path="res://assets/phase2/TheWallCharachters/hifa2.png" id="11_sqi0o"]
+[ext_resource type="Texture2D" uid="uid://cbp8f8o3o26g3" path="res://assets/phase2/TheWallCharachters/hifa3.png" id="12_rx6h7"]
 [ext_resource type="PackedScene" uid="uid://b77f7prnfeif5" path="res://scenes/phase2/DialogPlayer.tscn" id="13_5quxn"]
-[ext_resource type="Texture2D" uid="uid://djdqlafimijan" path="res://assets/phase2/other_1.png" id="13_mmycb"]
-[ext_resource type="Texture2D" uid="uid://bjlhuyif6uwk4" path="res://assets/phase2/james.png" id="13_xbh82"]
+[ext_resource type="Texture2D" uid="uid://0scg1fugftcb" path="res://assets/phase2/TheWallCharachters/hughes1.png" id="13_co02k"]
+[ext_resource type="Texture2D" uid="uid://deigypx3pggjw" path="res://assets/phase2/TheWallCharachters/hughes2.png" id="14_0bdrm"]
 [ext_resource type="Texture2D" uid="uid://c54dffb8x3hso" path="res://assets/phase1/2d_lights_and_shadows_neutral_point_light.webp" id="14_14abt"]
-[ext_resource type="Texture2D" uid="uid://xhjgq0bivwbq" path="res://assets/phase2/other_2.png" id="14_o1wro"]
 [ext_resource type="Script" path="res://scripts/phase2/animation_player.gd" id="14_sypv2"]
-[ext_resource type="Texture2D" uid="uid://civty08cqmcbm" path="res://assets/phase2/other_3.png" id="15_gb4ja"]
-[ext_resource type="Texture2D" uid="uid://bam3qfn2ymyaw" path="res://assets/phase2/captain_1.png" id="16_eqxwu"]
-[ext_resource type="Texture2D" uid="uid://c73ohj17ro4xa" path="res://assets/phase2/captain_2.png" id="17_xn4fj"]
-[ext_resource type="Texture2D" uid="uid://bwpkbcv4bb5ua" path="res://assets/phase2/captain_3.png" id="18_neuvh"]
+[ext_resource type="Texture2D" uid="uid://dd7hpfa04tff8" path="res://assets/phase2/TheWallCharachters/hughes3.png" id="15_naum8"]
+[ext_resource type="Texture2D" uid="uid://tscghbe5ichs" path="res://assets/phase2/TheWallCharachters/james1.png" id="16_5ha0g"]
+[ext_resource type="Texture2D" uid="uid://ctjsjkidfv02l" path="res://assets/phase2/TheWallCharachters/james2.png" id="17_45kfp"]
+[ext_resource type="Texture2D" uid="uid://d0pcuhvsal2oi" path="res://assets/phase2/TheWallCharachters/james3.png" id="18_b0o6i"]
+[ext_resource type="Texture2D" uid="uid://cqxoa1bdk7a3q" path="res://assets/phase2/TheWallCharachters/captain1.png" id="19_4pac5"]
+[ext_resource type="Texture2D" uid="uid://i7ruanopb40r" path="res://assets/phase2/TheWallCharachters/captain2.png" id="20_biwt3"]
+[ext_resource type="Texture2D" uid="uid://dwkjhkmhs8ni3" path="res://assets/phase2/TheWallCharachters/captain3.png" id="21_vif10"]
 [ext_resource type="AudioStream" uid="uid://rw2qbvyvgeiu" path="res://assets/phase2/Door Creaking Sound Effect.mp3" id="22_tsjxm"]
+[ext_resource type="AudioStream" uid="uid://b5pxaipmcev54" path="res://assets/phase1/sounds/meeresrauschen-152733.mp3" id="26_5at1g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3vo7"]
 texture = ExtResource("1_58uo7")
@@ -56,13 +59,13 @@ sources/7 = SubResource("TileSetAtlasSource_syra5")
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_6mq7s")
+"texture": ExtResource("7_ben0e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_temyp")
+"texture": ExtResource("8_f6fui")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_yy344")
+"texture": ExtResource("9_5cfcf")
 }],
 "loop": true,
 "name": &"running",
@@ -73,13 +76,13 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_0d8ij")
+"texture": ExtResource("10_gyawv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_v8kfc")
+"texture": ExtResource("11_sqi0o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_jnn3u")
+"texture": ExtResource("12_rx6h7")
 }],
 "loop": true,
 "name": &"running",
@@ -90,42 +93,30 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("13_mmycb")
+"texture": ExtResource("13_co02k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_o1wro")
+"texture": ExtResource("14_0bdrm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_gb4ja")
+"texture": ExtResource("15_naum8")
 }],
 "loop": true,
 "name": &"running",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4tya7"]
-atlas = ExtResource("13_xbh82")
-region = Rect2(0, 0, 14, 31)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wg5pj"]
-atlas = ExtResource("13_xbh82")
-region = Rect2(25, 0, 14, 31)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o6wse"]
-atlas = ExtResource("13_xbh82")
-region = Rect2(50, 0, 14, 31)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhpkh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4tya7")
+"texture": ExtResource("16_5ha0g")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wg5pj")
+"texture": ExtResource("17_45kfp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o6wse")
+"texture": ExtResource("18_b0o6i")
 }],
 "loop": true,
 "name": &"running",
@@ -136,13 +127,13 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_eqxwu")
+"texture": ExtResource("19_4pac5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_xn4fj")
+"texture": ExtResource("20_biwt3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_neuvh")
+"texture": ExtResource("21_vif10")
 }],
 "loop": true,
 "name": &"running",
@@ -376,13 +367,13 @@ tracks/0/keys = {
 "args": ["Hifa", "Yes."],
 "method": &"display_text"
 }, {
-"args": ["Hughes", "What do we do from h—"],
+"args": ["Hughes", "What do we do from h-"],
 "method": &"display_text"
 }, {
 "args": [],
 "method": &"_hide"
 }, {
-"args": ["Hughes", "Wait… What was that?"],
+"args": ["Hughes", "Wait... What was that?"],
 "method": &"display_text"
 }, {
 "args": ["Hifa", "We're not alone on this boat."],
@@ -400,7 +391,7 @@ tracks/0/keys = {
 "args": ["James", "But that's not the only surprise. Come with me."],
 "method": &"display_text"
 }, {
-"args": ["Kavanagh", " Who…?"],
+"args": ["Kavanagh", " Who...?"],
 "method": &"display_text"
 }, {
 "args": ["Kavanagh", "The Captain?! What's he doing here?"],
@@ -521,10 +512,10 @@ tracks/6/path = NodePath("James:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 2.23),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2.22, 2.23),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [false, true]
+"values": [false, false, true]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -577,19 +568,19 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("James:flip_h")
+tracks/11/path = NodePath("Hifa:flip_h")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 3.43),
+"times": PackedFloat32Array(0, 2.1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
+"update": 1,
 "values": [false, true]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Hifa:flip_h")
+tracks/12/path = NodePath("Kavanagh:flip_h")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -601,34 +592,22 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Kavanagh:flip_h")
+tracks/13/path = NodePath("Captain:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 2.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Captain:visible")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
 "times": PackedFloat32Array(0, 4.53),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
-tracks/15/type = "method"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath(".")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
+tracks/14/type = "method"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath(".")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
 "times": PackedFloat32Array(5.13),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -636,37 +615,37 @@ tracks/15/keys = {
 "method": &"next_day_fade"
 }]
 }
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Captain:flip_h")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Captain:flip_h")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Captain:position")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Captain:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(923, 514)]
 }
-tracks/18/type = "method"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("James")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
+tracks/17/type = "method"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("James")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
 "times": PackedFloat32Array(2.33, 3.13, 3.43, 4.43),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
@@ -683,10 +662,27 @@ tracks/18/keys = {
 "method": &"stop"
 }]
 }
+tracks/18/type = "method"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Kavanagh")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(3.43, 4.43),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"running", 1.0, false],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}]
+}
 tracks/19/type = "method"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Kavanagh")
+tracks/19/path = NodePath("Hifa")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
@@ -703,7 +699,7 @@ tracks/19/keys = {
 tracks/20/type = "method"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Hifa")
+tracks/20/path = NodePath("Hughes")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -720,33 +716,28 @@ tracks/20/keys = {
 tracks/21/type = "method"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Hughes")
+tracks/21/path = NodePath("AudioStreamPlayer2D")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(3.43, 4.43),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [&"running", 1.0, false],
-"method": &"play"
-}, {
-"args": [],
-"method": &"stop"
-}]
-}
-tracks/22/type = "method"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("AudioStreamPlayer2D")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [0.0],
 "method": &"play"
 }]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("James:flip_h")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 3.41, 3.42),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [false, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_ktoec"]
@@ -763,7 +754,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.61, 0.63, 0.65, 0.67, 0.69, 0.71, 0.73, 0.75, 0.77, 0.79, 2.78, 2.8, 2.82, 2.84, 2.86, 4.76, 4.78, 4.8, 5.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
-"args": ["Kavanagh", "Captain… tell us. Why did you betray us?"],
+"args": ["Kavanagh", "Captain... tell us. Why did you betray us?"],
 "method": &"display_text"
 }, {
 "args": ["Captain", "That's a long story, kid…"],
@@ -802,7 +793,7 @@ tracks/0/keys = {
 "args": ["James", "Enough of this. Let's kill him."],
 "method": &"display_text"
 }, {
-"args": ["Captain", "You could. But then you’d have no one to guide you. Or… you can let me lead you to safety. South. There are islands there, places where Others live. Places where we could live."],
+"args": ["Captain", "You could. But then you’d have no one to guide you. Or... you can let me lead you to safety. South. There are islands there, places where Others live. Places where we could live."],
 "method": &"display_text"
 }, {
 "args": [],
@@ -1089,16 +1080,16 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.5, 1, 2.92, 2.95, 2.97, 2.99, 3.01, 5.04, 5.06, 5.08, 5.1, 5.12, 7.97, 8.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
-"args": ["Kavanagh", "The sea feels endless… so vast, so empty. And this quiet… it’s almost worse than the Wall."],
+"args": ["Kavanagh", "The sea feels endless... so vast, so empty. And this quiet... it’s almost worse than the Wall."],
 "method": &"display_text"
 }, {
-"args": ["Kavanagh", "Wait… what’s that? Lights? Out there? Could it be… a guard boat? Or… Others? What do I do? Should I wake someone?"],
+"args": ["Kavanagh", "Wait... what’s that? Lights? Out there? Could it be... a guard boat? Or... Others? What do I do? Should I wake someone?"],
 "method": &"display_text"
 }, {
 "args": ["Kavanagh", "Hughes. Hughes, wake up. I need you to see something."],
 "method": &"display_text"
 }, {
-"args": ["Hughes", "Kavanagh, what are you—?"],
+"args": ["Hughes", "Kavanagh, what are you-?"],
 "method": &"display_text"
 }, {
 "args": ["Kavangh", "There are lights. In the distance."],
@@ -1113,7 +1104,7 @@ tracks/0/keys = {
 "args": ["Hughes", "I see them too. What do we do?"],
 "method": &"display_text"
 }, {
-"args": ["Kavanagh", " If it’s the guards, they’ll sink us the moment they notice us. And if it’s Others… well, they wouldn’t show off like that unless they wanted to scare us."],
+"args": ["Kavanagh", " If it’s the guards, they’ll sink us the moment they notice us. And if it’s Others... well, they wouldn’t show off like that unless they have the power to do so"],
 "method": &"display_text"
 }, {
 "args": ["Hughes", "So, what then?"],
@@ -1122,7 +1113,7 @@ tracks/0/keys = {
 "args": ["Kavanagh", "We leave them alone. It’s safer this way."],
 "method": &"display_text"
 }, {
-"args": ["Hughes", "Yeah… safer. If you’re sure, I’m heading back to sleep."],
+"args": ["Hughes", "Yeah... safer. If you’re sure, I’m heading back to sleep."],
 "method": &"display_text"
 }, {
 "args": ["Kavanagh", "But what if we’re wrong?"],
@@ -1487,7 +1478,7 @@ animation = &"running"
 [node name="Hughes" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(968, 544)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_lk7dg")
 animation = &"running"
 
@@ -1545,3 +1536,9 @@ texture_filter = 1
 texture_filter = 1
 stream = ExtResource("22_tsjxm")
 bus = &"SFX"
+
+[node name="water_sounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_5at1g")
+autoplay = true
+bus = &"Ambient"
+parameters/looping = false

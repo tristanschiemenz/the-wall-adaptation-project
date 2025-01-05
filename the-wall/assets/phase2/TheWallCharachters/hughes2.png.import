@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1vopw2fw2hgu"
-path="res://.godot/imported/palyer_2.png-a99f295db0fc1197b14fdf0ebef9cf14.ctex"
+uid="uid://deigypx3pggjw"
+path="res://.godot/imported/hughes2.png-60071483919b70bc786cb8ddd1e32573.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phase2/palyer_2.png"
-dest_files=["res://.godot/imported/palyer_2.png-a99f295db0fc1197b14fdf0ebef9cf14.ctex"]
+source_file="res://assets/phase2/TheWallCharachters/hughes2.png"
+dest_files=["res://.godot/imported/hughes2.png-60071483919b70bc786cb8ddd1e32573.ctex"]
 
 [params]
 

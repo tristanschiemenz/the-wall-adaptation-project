@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyaaytewnfcuo"
-path="res://.godot/imported/palyer_3.png-40d3d2e9c3c906f68da731e248d552b3.ctex"
+uid="uid://vnig2lw70j7l"
+path="res://.godot/imported/kav1.png-0b2c8846b1c3be66143072b17fef459c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phase2/palyer_3.png"
-dest_files=["res://.godot/imported/palyer_3.png-40d3d2e9c3c906f68da731e248d552b3.ctex"]
+source_file="res://assets/phase2/TheWallCharachters/kav1.png"
+dest_files=["res://.godot/imported/kav1.png-0b2c8846b1c3be66143072b17fef459c.ctex"]
 
 [params]
 

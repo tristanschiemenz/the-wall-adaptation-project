@@ -1,24 +1,25 @@
-[gd_scene load_steps=33 format=3 uid="uid://dqgeuyv4dqafx"]
+[gd_scene load_steps=34 format=3 uid="uid://dqgeuyv4dqafx"]
 
 [ext_resource type="Script" path="res://scripts/phase2/theisland_cutscene.gd" id="1_imq7s"]
 [ext_resource type="Texture2D" uid="uid://wufgfp8jsy3v" path="res://assets/phase2/raft.png" id="2_ly630"]
+[ext_resource type="Texture2D" uid="uid://tscghbe5ichs" path="res://assets/phase2/TheWallCharachters/james1.png" id="6_0npmt"]
 [ext_resource type="Texture2D" uid="uid://bwjscsvep7cmy" path="res://assets/phase1/ocean_animated.tres" id="6_7ofqr"]
-[ext_resource type="Texture2D" uid="uid://dus2bx3hpaqgt" path="res://assets/phase2/player_1.png" id="7_7v2s0"]
 [ext_resource type="Script" path="res://scripts/phase2/animation_player.gd" id="7_43mgf"]
 [ext_resource type="Texture2D" uid="uid://b4as7us1g33pt" path="res://assets/phase2/SandLight.png" id="7_sexp5"]
-[ext_resource type="Texture2D" uid="uid://1vopw2fw2hgu" path="res://assets/phase2/palyer_2.png" id="8_vysju"]
-[ext_resource type="Texture2D" uid="uid://cyaaytewnfcuo" path="res://assets/phase2/palyer_3.png" id="9_fqdtt"]
+[ext_resource type="Texture2D" uid="uid://ctjsjkidfv02l" path="res://assets/phase2/TheWallCharachters/james2.png" id="7_sr423"]
+[ext_resource type="Texture2D" uid="uid://d0pcuhvsal2oi" path="res://assets/phase2/TheWallCharachters/james3.png" id="8_oqknu"]
+[ext_resource type="Texture2D" uid="uid://nvf50h06k3ow" path="res://assets/phase2/TheWallCharachters/hifa1.png" id="9_yynrf"]
+[ext_resource type="Texture2D" uid="uid://da41u672e7s5c" path="res://assets/phase2/TheWallCharachters/hifa2.png" id="10_f1e6l"]
+[ext_resource type="Texture2D" uid="uid://cbp8f8o3o26g3" path="res://assets/phase2/TheWallCharachters/hifa3.png" id="11_31jiy"]
 [ext_resource type="PackedScene" uid="uid://b77f7prnfeif5" path="res://scenes/phase2/DialogPlayer.tscn" id="11_p80hx"]
-[ext_resource type="Texture2D" uid="uid://djdqlafimijan" path="res://assets/phase2/other_1.png" id="12_ap1v8"]
-[ext_resource type="Texture2D" uid="uid://xhjgq0bivwbq" path="res://assets/phase2/other_2.png" id="13_uvfvb"]
-[ext_resource type="Texture2D" uid="uid://civty08cqmcbm" path="res://assets/phase2/other_3.png" id="14_kepeg"]
-[ext_resource type="Texture2D" uid="uid://b2135w4gvmye" path="res://assets/phase2/hifa_1.png" id="16_dbhxe"]
-[ext_resource type="Texture2D" uid="uid://dibk3i2athw3a" path="res://assets/phase2/hifa_2.png" id="17_w2y1b"]
-[ext_resource type="Texture2D" uid="uid://jkgm7gqvhoj1" path="res://assets/phase2/hifa_3.png" id="18_qs3fg"]
-[ext_resource type="Texture2D" uid="uid://bam3qfn2ymyaw" path="res://assets/phase2/captain_1.png" id="19_dd8kf"]
-[ext_resource type="Texture2D" uid="uid://c73ohj17ro4xa" path="res://assets/phase2/captain_2.png" id="20_qwah5"]
-[ext_resource type="Texture2D" uid="uid://bwpkbcv4bb5ua" path="res://assets/phase2/captain_3.png" id="21_4dbl1"]
+[ext_resource type="Texture2D" uid="uid://cqxoa1bdk7a3q" path="res://assets/phase2/TheWallCharachters/captain1.png" id="12_37mgk"]
+[ext_resource type="Texture2D" uid="uid://i7ruanopb40r" path="res://assets/phase2/TheWallCharachters/captain2.png" id="13_8gbkt"]
+[ext_resource type="Texture2D" uid="uid://dwkjhkmhs8ni3" path="res://assets/phase2/TheWallCharachters/captain3.png" id="14_ttc51"]
+[ext_resource type="Texture2D" uid="uid://vnig2lw70j7l" path="res://assets/phase2/TheWallCharachters/kav1.png" id="15_xnu3y"]
+[ext_resource type="Texture2D" uid="uid://c5qfldujif7ia" path="res://assets/phase2/TheWallCharachters/kav2.png" id="16_ibjxo"]
+[ext_resource type="Texture2D" uid="uid://c75bvfmiew06" path="res://assets/phase2/TheWallCharachters/kav3.png" id="17_h1yek"]
 [ext_resource type="Texture2D" uid="uid://c54dffb8x3hso" path="res://assets/phase1/2d_lights_and_shadows_neutral_point_light.webp" id="22_4kjxk"]
+[ext_resource type="AudioStream" uid="uid://b5pxaipmcev54" path="res://assets/phase1/sounds/meeresrauschen-152733.mp3" id="22_a6hlm"]
 [ext_resource type="AudioStream" uid="uid://bbc7b2cjh2c1k" path="res://assets/phase1/sounds/shoot.mp3" id="23_n6agd"]
 [ext_resource type="AudioStream" uid="uid://dld0fqaoq3561" path="res://assets/phase1/sounds/medium-explosion-40472.mp3" id="24_8ia88"]
 
@@ -541,13 +542,13 @@ _data = {
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_ap1v8")
+"texture": ExtResource("6_0npmt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_uvfvb")
+"texture": ExtResource("7_sr423")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_kepeg")
+"texture": ExtResource("8_oqknu")
 }],
 "loop": true,
 "name": &"running",
@@ -558,13 +559,13 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_dbhxe")
+"texture": ExtResource("9_yynrf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_w2y1b")
+"texture": ExtResource("10_f1e6l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_qs3fg")
+"texture": ExtResource("11_31jiy")
 }],
 "loop": true,
 "name": &"running",
@@ -575,13 +576,13 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("19_dd8kf")
+"texture": ExtResource("12_37mgk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_qwah5")
+"texture": ExtResource("13_8gbkt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_4dbl1")
+"texture": ExtResource("14_ttc51")
 }],
 "loop": true,
 "name": &"running",
@@ -592,13 +593,13 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_7v2s0")
+"texture": ExtResource("15_xnu3y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_vysju")
+"texture": ExtResource("16_ibjxo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_fqdtt")
+"texture": ExtResource("17_h1yek")
 }],
 "loop": true,
 "name": &"running",
@@ -690,3 +691,9 @@ bus = &"SFX"
 [node name="explosion_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("24_8ia88")
 bus = &"SFX"
+
+[node name="water_sounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_a6hlm")
+autoplay = true
+bus = &"Ambient"
+parameters/looping = false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xhjgq0bivwbq"
-path="res://.godot/imported/other_2.png-229d81051b2aa0e47f5fb4707cc282fe.ctex"
+uid="uid://dwkjhkmhs8ni3"
+path="res://.godot/imported/captain3.png-15ed23b990f15ac4515175fe79288577.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phase2/other_2.png"
-dest_files=["res://.godot/imported/other_2.png-229d81051b2aa0e47f5fb4707cc282fe.ctex"]
+source_file="res://assets/phase2/TheWallCharachters/captain3.png"
+dest_files=["res://.godot/imported/captain3.png-15ed23b990f15ac4515175fe79288577.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2135w4gvmye"
-path="res://.godot/imported/hifa_1.png-db724144cf78bc7bb571ffdab1b78dbc.ctex"
+uid="uid://ctjsjkidfv02l"
+path="res://.godot/imported/james2.png-7219790c463dd9aefd5faf336b4f04b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phase2/hifa_1.png"
-dest_files=["res://.godot/imported/hifa_1.png-db724144cf78bc7bb571ffdab1b78dbc.ctex"]
+source_file="res://assets/phase2/TheWallCharachters/james2.png"
+dest_files=["res://.godot/imported/james2.png-7219790c463dd9aefd5faf336b4f04b7.ctex"]
 
 [params]
 

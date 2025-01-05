@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://civty08cqmcbm"
-path="res://.godot/imported/other_3.png-5f79da9bd56cd734f52716d8eaf300f3.ctex"
+uid="uid://dd7hpfa04tff8"
+path="res://.godot/imported/hughes3.png-a6da7a7ac59fee0ac36650a4ceebb7a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phase2/other_3.png"
-dest_files=["res://.godot/imported/other_3.png-5f79da9bd56cd734f52716d8eaf300f3.ctex"]
+source_file="res://assets/phase2/TheWallCharachters/hughes3.png"
+dest_files=["res://.godot/imported/hughes3.png-a6da7a7ac59fee0ac36650a4ceebb7a3.ctex"]
 
 [params]
 
