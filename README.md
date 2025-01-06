@@ -10,41 +10,13 @@ This is a 2D video game adaptation of the novel *The Wall* by John Lanchester, d
 - **Engine**: Godot Engine (version 4.3).
 - **Language**: GDScript.
 
-## Getting Started
-
-### Prerequisites
-- Install [Godot Engine](https://godotengine.org/) (version 4.3).
-- Ensure your system meets the minimum requirements for running Godot.
-
-### Installation
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/the-wall-game.git
-   cd the-wall-game
-   ```
-2. Open the project in Godot:
-   - Launch Godot.
-   - Click on "Import Project."
-   - Navigate to the project folder and select the `project.godot` file.
-
-3. Run the game:
-   - In Godot, click the "Play" button to start the game.
-
 ## Development
 
 ### Structure
-- `scenes/`: Contains all game scenes (e.g., main menu, levels).
+- `scenes/`: Contains all game scenes.
 - `scripts/`: Core game logic written in GDScript.
 - `assets/`: Art, audio, and other resources.
-- `docs/`: Design documents and additional resources.
 
-### Contributions
-We welcome contributions! Please follow these steps:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeatureName`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeatureName`).
-5. Open a Pull Request.
 
 ## Credits
 - **Story**: Based on *The Wall* by John Lanchester.
