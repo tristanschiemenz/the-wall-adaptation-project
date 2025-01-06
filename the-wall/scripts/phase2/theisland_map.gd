@@ -37,7 +37,7 @@ func _give_quest_dialog() -> void:
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 	
-	dialog.display_text("???", "Yeah, you. I’ve got a task for you.")
+	dialog.display_text("???", "Yeah, you. I've got a task for you.")
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 
@@ -45,7 +45,7 @@ func _give_quest_dialog() -> void:
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 
-	dialog.display_text("???", "Listen, food’s running low around here, as you’ll soon find out.")
+	dialog.display_text("???", "Listen, food's running low around here, as you'll soon find out.")
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 	
@@ -57,11 +57,11 @@ func _give_quest_dialog() -> void:
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 
-	dialog.display_text("Kavanagh", "Okay. I’ll do it.")
+	dialog.display_text("Kavanagh", "Okay. I'll do it.")
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 
-	dialog.display_text("???", "Good. Don’t come back empty-handed.")
+	dialog.display_text("???", "Good. Don't come back empty-handed.")
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 	
@@ -73,7 +73,7 @@ func _quest_finished_dialog():
 	player.can_move = false
 	quest_dealer.flip_h = true
 	
-	dialog.display_text("Kavanagh", "Here’s the food I managed to gather.")
+	dialog.display_text("Kavanagh", "Here's the food I managed to gather.")
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 
@@ -81,11 +81,11 @@ func _quest_finished_dialog():
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 
-	dialog.display_text("Kavanagh", "I didn’t catch your name. Who are you?")
+	dialog.display_text("Kavanagh", "I didn't catch your name. Who are you?")
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 
-	dialog.display_text("Kellan", "Oh, right. I’m Kellan. Sorry, it’s been a long day for all of us.")
+	dialog.display_text("Kellan", "Oh, right. I'm Kellan. Sorry, it's been a long day for all of us.")
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 
@@ -93,11 +93,11 @@ func _quest_finished_dialog():
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 
-	dialog.display_text("Kellan", "Well, Kavanagh, you’ve done more than enough for today. Go find a place to sleep. You’ve earned it.")
+	dialog.display_text("Kellan", "Well, Kavanagh, you've done more than enough for today. Go find a place to sleep. You've earned it.")
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 
-	dialog.display_text("Kavanagh", "Thanks. I guess I’ll see you tomorrow.")
+	dialog.display_text("Kavanagh", "Thanks. I guess I'll see you tomorrow.")
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 

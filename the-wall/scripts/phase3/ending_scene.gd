@@ -23,6 +23,10 @@ func _ending_dialog() -> void:
 	dialog.display_text("Hifa", "Yes, you're right.")
 	await _wait_for_accept()
 	await get_tree().create_timer(0.5).timeout
+	
+	dialog.display_text("Hifa", "..., I have to tell you something.")
+	await _wait_for_accept()
+	await get_tree().create_timer(0.5).timeout
 
 	dialog.display_text("Hifa", "I didn't actually want to breed. It was more about wanting sex... and getting off the Wall.")
 	await _wait_for_accept()

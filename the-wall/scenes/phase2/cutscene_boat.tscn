@@ -757,7 +757,7 @@ tracks/0/keys = {
 "args": ["Kavanagh", "Captain... tell us. Why did you betray us?"],
 "method": &"display_text"
 }, {
-"args": ["Captain", "That's a long story, kid…"],
+"args": ["Captain", "That's a long story, kid..."],
 "method": &"display_text"
 }, {
 "args": ["James", "We've got time. Start talking."],
@@ -766,10 +766,10 @@ tracks/0/keys = {
 "args": ["Captain", "Where do I even begin? Ten years ago, seven of us made it over the Wall. Seven. But in the end, I was the only one who survived."],
 "method": &"display_text"
 }, {
-"args": ["Captain", "After a long time, I got promoted to Captain. With that position came power… and the chance to execute a bigger plan. "],
+"args": ["Captain", "After a long time, I got promoted to Captain. With that position came power... and the chance to execute a bigger plan. "],
 "method": &"display_text"
 }, {
-"args": ["Captain", "I got in touch with a network of Others —a vast one. People like me, on both sides of the Wall."],
+"args": ["Captain", "I got in touch with a network of Others -a vast one. People like me, on both sides of the Wall."],
 "method": &"display_text"
 }, {
 "args": ["Hughes", "Why? Why would you help Others into the country?"],
@@ -793,7 +793,7 @@ tracks/0/keys = {
 "args": ["James", "Enough of this. Let's kill him."],
 "method": &"display_text"
 }, {
-"args": ["Captain", "You could. But then you’d have no one to guide you. Or... you can let me lead you to safety. South. There are islands there, places where Others live. Places where we could live."],
+"args": ["Captain", "You could. But then you'd have no one to guide you. Or... you can let me lead you to safety. South. There are islands there, places where Others live. Places where we could live."],
 "method": &"display_text"
 }, {
 "args": [],

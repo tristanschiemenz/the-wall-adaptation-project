@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dqgeuyv4dqafx"]
+[gd_scene load_steps=33 format=3 uid="uid://dqgeuyv4dqafx"]
 
 [ext_resource type="Script" path="res://scripts/phase2/theisland_cutscene.gd" id="1_imq7s"]
 [ext_resource type="Texture2D" uid="uid://wufgfp8jsy3v" path="res://assets/phase2/raft.png" id="2_ly630"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://c5qfldujif7ia" path="res://assets/phase3/kav2.png" id="16_ibjxo"]
 [ext_resource type="Texture2D" uid="uid://c75bvfmiew06" path="res://assets/phase3/kav3.png" id="17_h1yek"]
 [ext_resource type="Texture2D" uid="uid://c54dffb8x3hso" path="res://assets/phase1/2d_lights_and_shadows_neutral_point_light.webp" id="22_4kjxk"]
-[ext_resource type="AudioStream" uid="uid://b5pxaipmcev54" path="res://assets/phase1/sounds/meeresrauschen-152733.mp3" id="22_a6hlm"]
 [ext_resource type="AudioStream" uid="uid://bbc7b2cjh2c1k" path="res://assets/phase1/sounds/shoot.mp3" id="23_n6agd"]
 [ext_resource type="AudioStream" uid="uid://dld0fqaoq3561" path="res://assets/phase1/sounds/medium-explosion-40472.mp3" id="24_8ia88"]
 
@@ -154,6 +153,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Kavanagh:flip_h")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_1ap2p"]
 resource_name = "main_animation"
@@ -205,13 +216,13 @@ tracks/0/keys = {
 "args": [],
 "method": &"_hide"
 }, {
-"args": ["Captain", "The Lights are getting closer."],
+"args": ["Captain", "The lights are getting closer."],
 "method": &"display_text"
 }, {
 "args": [],
 "method": &"_hide"
 }, {
-"args": ["Captain", "Who are y—"],
+"args": ["Captain", "Who are y--"],
 "method": &"display_text"
 }, {
 "args": [],
@@ -223,7 +234,7 @@ tracks/0/keys = {
 "args": ["Pirates", "Take the supplies! And the woman!"],
 "method": &"display_text"
 }, {
-"args": ["James", "Guys, I still have the grenade. I’m gonna detonate it on their ship."],
+"args": ["James", "Guys, I still have the grenade. I'm gonna detonate it on their ship."],
 "method": &"display_text"
 }, {
 "args": ["Kavanagh", "No, you can't! You'll die!"],
@@ -244,7 +255,7 @@ tracks/0/keys = {
 "args": [],
 "method": &"_hide"
 }, {
-"args": ["Kavanagh", "It’s now or never—run!"],
+"args": ["Kavanagh", "It's now or never -run!"],
 "method": &"display_text"
 }, {
 "args": [],
@@ -374,10 +385,10 @@ tracks/6/path = NodePath("Hifa:flip_h")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 6.74),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 6.74, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, false, true]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -530,6 +541,18 @@ tracks/14/keys = {
 "args": [],
 "method": &"stop"
 }]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Kavanagh:flip_h")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c5j7v"]
@@ -691,9 +714,3 @@ bus = &"SFX"
 [node name="explosion_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("24_8ia88")
 bus = &"SFX"
-
-[node name="water_sounds" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("22_a6hlm")
-autoplay = true
-bus = &"Ambient"
-parameters/looping = false
