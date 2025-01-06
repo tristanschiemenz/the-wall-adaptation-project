@@ -358,8 +358,8 @@ tracks/0/path = NodePath("Camera2D/DialogPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.02, 0.04, 0.1, 2.1, 2.19, 2.21, 2.24, 3.38, 3.4, 4.48, 4.58, 4.6, 4.62, 5.13),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.1, 2.1, 2.19, 2.21, 2.24, 3.38, 3.4, 4.48, 4.58, 4.6, 4.62, 4.64, 5.13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": ["Kavanagh", "So, this is it. We're on our own now."],
 "method": &"display_text"
@@ -394,10 +394,13 @@ tracks/0/keys = {
 "args": ["Kavanagh", " Who...?"],
 "method": &"display_text"
 }, {
-"args": ["Kavanagh", "The Captain?! What's he doing here?"],
+"args": ["Kavanagh", "The Captain?! How are you alive?"],
 "method": &"display_text"
 }, {
-"args": ["James", "Should we kill him? He betrayed us."],
+"args": ["Captain", "The medics got me and saved my life."],
+"method": &"display_text"
+}, {
+"args": ["James", "Should we finish him off for real this time? He betrayed us."],
 "method": &"display_text"
 }, {
 "args": ["Hifa", "No. Not yet. It's been a long day. Let's rest first. Decisions like this need clear heads."],
@@ -414,9 +417,12 @@ tracks/1/path = NodePath("MainAnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.01, 0.03, 0.05, 2.11, 2.2, 2.22, 2.25, 3.39, 3.41, 4.49, 4.59, 4.61, 4.63),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.01, 0.03, 0.05, 2.11, 2.2, 2.22, 2.25, 3.39, 3.41, 4.49, 4.59, 4.61, 4.63, 4.65),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
+"args": [],
+"method": &"_wait_for_accept"
+}, {
 "args": [],
 "method": &"_wait_for_accept"
 }, {

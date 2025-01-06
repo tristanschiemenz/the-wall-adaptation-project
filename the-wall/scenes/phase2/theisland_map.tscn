@@ -96,6 +96,7 @@ radius = 22.0
 size = Vector2(1166, 69)
 
 [node name="theisland_map" type="Node2D"]
+texture_filter = 1
 position = Vector2(68, 171)
 script = ExtResource("1_eyv8i")
 
@@ -113,11 +114,13 @@ layer_2/name = "Layer1"
 layer_2/tile_data = PackedInt32Array(1703933, 65537, 3, 1638397, 131073, 3, 1638396, 1, 3, 1703932, 1, 3, 1179645, 65537, 3, 1245181, 131073, 3, 1245180, 65537, 3, 983037, 1, 3, 1048573, 65537, 3, 851965, 65537, 3, 786429, 131073, 3, 720893, 1, 3, 786428, 1, 3, 851964, 65537, 3, 720895, 1, 3, 589825, 1, 3, 655360, 1, 3, 589824, 1, 3, 655365, 131073, 3, 589829, 65537, 3, 655366, 65537, 3, 655368, 131073, 3, 589833, 1, 3, 655369, 1, 3, 655372, 65537, 3, 589837, 131073, 3, 655373, 1, 3, 589836, 1, 3, 655377, 65537, 3, 655378, 65537, 3, 589841, 1, 3, 655381, 65537, 3, 589845, 1, 3, 655382, 1, 3, 589846, 65537, 3, 655379, 1, 3, 655374, 65537, 3, 589839, 131073, 3, 655370, 1, 3, 589834, 1, 3, 655384, 65537, 3, 589849, 1, 3, 655386, 1, 3, 589852, 65537, 3, 655388, 1, 3, 589853, 1, 3, 655390, 1, 3, 720927, 65537, 3, 852000, 1, 3, 851999, 131073, 3, 917536, 131073, 3, 983072, 65537, 3, 1048608, 131073, 3, 917537, 1, 3, 983073, 1, 3, 1048609, 1, 3, 1114144, 65537, 3, 1114143, 1, 3, 917535, 1, 3, 983071, 65537, 3, 1179680, 1, 3, 1245216, 65537, 3, 1245215, 131073, 3, 1310751, 1, 3, 1376288, 131073, 3, 1441824, 1, 3, 1507359, 131073, 3, 1572895, 1, 3, 1638432, 131073, 3, 1572896, 1, 3, 1638431, 65537, 3, 1507360, 65537, 3, 1376287, 65537, 3, 1310752, 65537, 3, 1179679, 65537, 3, 786464, 65537, 3, 655391, 131073, 3, 589854, 65537, 3, 589856, 65537, 3, 655392, 65537, 3, 655389, 131073, 3, 589848, 1, 3, 589847, 65537, 3, 655383, 65537, 3, 589843, 1, 3, 589838, 1, 3, 589832, 65537, 3, 655363, 65537, 3, 655361, 65537, 3, 589827, 131073, 3, 655359, 131073, 3, 720894, 65537, 3, 720892, 65537, 3, 917501, 131073, 3, 1114109, 131073, 3, 1245179, 65537, 3, 1310716, 131073, 3, 1310717, 65537, 3, 1179644, 1, 3, 917500, 1, 3, 655358, 1, 3, 655362, 131073, 3, 589828, 1, 3, 589830, 131073, 3, 655364, 1, 3, 589831, 1, 3, 655376, 131073, 3, 589851, 1, 3, 1048607, 131073, 3, 655385, 131073, 3, 524314, 131073, 3, 589844, 131073, 3, 655371, 131073, 3, 1048572, 131073, 3, 1376252, 65537, 3, 1441788, 1, 3, 1507324, 131073, 3, 1572860, 1, 3, 1376253, 1, 3, 1441789, 65537, 3, 1507325, 1, 3, 1572861, 65537, 3)
 
 [node name="player_p2" parent="." instance=ExtResource("6_81jc4")]
+texture_filter = 1
 position = Vector2(205, 1274)
 collision_layer = 3
 SPEED = 150.0
 
 [node name="Camera2D" type="Camera2D" parent="player_p2"]
+texture_filter = 1
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(2.5, 2.5)
 limit_left = -200
@@ -132,8 +135,10 @@ offset_top = 110.0
 offset_bottom = 110.0
 grow_vertical = 0
 scale = Vector2(0.3, 0.3)
+metadata/_edit_use_anchors_ = true
 
 [node name="borders" type="StaticBody2D" parent="."]
+texture_filter = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="borders"]
 position = Vector2(-4, 1)
@@ -180,6 +185,7 @@ position = Vector2(955, 1212)
 shape = SubResource("RectangleShape2D_qm4nc")
 
 [node name="fishing_quest_dealer" type="Area2D" parent="."]
+texture_filter = 1
 collision_layer = 0
 collision_mask = 2
 input_pickable = false
@@ -191,10 +197,12 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_b0evn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fishing_quest_dealer"]
+texture_filter = 1
 position = Vector2(1230, 785)
 shape = SubResource("CircleShape2D_g3mur")
 
 [node name="water_dive_area" type="Area2D" parent="."]
+texture_filter = 1
 position = Vector2(112, 1327)
 collision_layer = 0
 collision_mask = 2
@@ -229,9 +237,8 @@ position = Vector2(904, 1240)
 scale = Vector2(2, 2)
 texture = ExtResource("10_ij5om")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="water_sounds" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_umm1v")
-volume_db = -6.978
 autoplay = true
 bus = &"Ambient"
 parameters/looping = false

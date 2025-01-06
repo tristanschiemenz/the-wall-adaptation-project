@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dqgeuyv4dqafx"]
+[gd_scene load_steps=34 format=3 uid="uid://dqgeuyv4dqafx"]
 
 [ext_resource type="Script" path="res://scripts/phase2/theisland_cutscene.gd" id="1_imq7s"]
 [ext_resource type="Texture2D" uid="uid://wufgfp8jsy3v" path="res://assets/phase2/raft.png" id="2_ly630"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c5qfldujif7ia" path="res://assets/phase3/kav2.png" id="16_ibjxo"]
 [ext_resource type="Texture2D" uid="uid://c75bvfmiew06" path="res://assets/phase3/kav3.png" id="17_h1yek"]
 [ext_resource type="Texture2D" uid="uid://c54dffb8x3hso" path="res://assets/phase1/2d_lights_and_shadows_neutral_point_light.webp" id="22_4kjxk"]
+[ext_resource type="AudioStream" uid="uid://b5pxaipmcev54" path="res://assets/phase1/sounds/meeresrauschen-152733.mp3" id="22_dbi2o"]
 [ext_resource type="AudioStream" uid="uid://bbc7b2cjh2c1k" path="res://assets/phase1/sounds/shoot.mp3" id="23_n6agd"]
 [ext_resource type="AudioStream" uid="uid://dld0fqaoq3561" path="res://assets/phase1/sounds/medium-explosion-40472.mp3" id="24_8ia88"]
 
@@ -714,3 +715,9 @@ bus = &"SFX"
 [node name="explosion_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("24_8ia88")
 bus = &"SFX"
+
+[node name="water_sounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_dbi2o")
+autoplay = true
+bus = &"Ambient"
+parameters/looping = false
