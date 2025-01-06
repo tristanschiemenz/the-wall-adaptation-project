@@ -19,11 +19,11 @@
 
 [sub_resource type="Curve2D" id="Curve2D_fkm4i"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 705, 855)
+"points": PackedVector2Array(0, 0, 0, 0, 687, 836)
 }
 point_count = 1
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pbwic"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdhag"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -152,13 +152,13 @@ script = ExtResource("1_c0egl")
 curve = SubResource("Curve2D_fkm4i")
 
 [node name="KevPathFollower" type="PathFollow2D" parent="KevPath"]
-position = Vector2(729, 813)
+position = Vector2(687, 836)
 rotates = false
 
 [node name="KevSprite" type="AnimatedSprite2D" parent="KevPath/KevPathFollower"]
 texture_filter = 1
 scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_pbwic")
+sprite_frames = SubResource("SpriteFrames_bdhag")
 animation = &"walk"
 
 [node name="HifaPath" type="Path2D" parent="."]

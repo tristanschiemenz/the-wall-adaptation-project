@@ -53,9 +53,8 @@ var steps_playing = false
 # Called when this node is added to the scene
 #
 func _ready():
-	set_kev_start_position(Vector2(1000,600))
+	#start_timeline()
 	reset_all_progress()
-	start_timeline()
 	BulletSprite.hide()
 	Bullet2Sprite.hide()
 
@@ -63,7 +62,6 @@ func _ready():
 #1) Reset progress_ratio to 0.0 for each follower
 #
 func reset_all_progress():
-	KevPathFollower.progress_ratio = 0.0
 	HifaPathFollower.progress_ratio = 0.0
 	CaptainPathFollower.progress_ratio = 0.0
 	OtherPathFollower.progress_ratio = 0.0
@@ -73,7 +71,6 @@ func reset_all_progress():
 	Boat4PathFollower.progress_ratio = 0.0
 func set_kev_start_position(start_pos: Vector2):
 	var curve = KevPath.curve
-	
 	#Check if the path currently has just one point (the end).
 	if curve.get_point_count() == 1:
 		#Insert the start as the first point, and keep the existing end as the second point.
@@ -87,18 +84,18 @@ func set_kev_start_position(start_pos: Vector2):
 			KevSprite.flip_h = false  # face right
 		else:
 			KevSprite.flip_h = true   # face left
-	
+	start_timeline()
 
 #
 # 2) Main timeline in a coroutine style
 #
 func start_timeline() -> void:
-	# a) All boats move to the end at 100 speed
-	await move_boats_to_end(100.0)
-
 	KevSprite.play("walk")
 	await move_path_to_end(KevPathFollower, 100.0)
 	KevSprite.stop()
+	# a) All boats move to the end at 100 speed
+	await move_boats_to_end(100.0)
+
 	await speech1()  # <--- call the first textbox/dialogue function
 
 	# c) Hifa moves at speed 200, then calls speech2

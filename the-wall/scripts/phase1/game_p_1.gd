@@ -6,7 +6,7 @@ extends Node2D
 var enemy_scene = preload("res://scenes/phase1/enemy_p_1.tscn")
 
 # Current day in the simulation
-var current_day: int = 1
+var current_day: int = 352
 
 # We'll dynamically create these timers in _ready()
 var day_timer: Timer
