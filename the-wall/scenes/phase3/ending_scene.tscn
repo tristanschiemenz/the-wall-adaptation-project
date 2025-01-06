@@ -144,7 +144,7 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(210, 1227)
 zoom = Vector2(3, 3)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="water_sounds" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_ikjso")
 autoplay = true
 bus = &"Ambient"
