@@ -19,9 +19,4 @@ mono_crash.*.json
 Thumbs.db
 .DS_Store
 
-# Build files
-*.exe
-*.dll
-*.pdb
-*.so
-*.dylib
+
