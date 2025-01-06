@@ -48,7 +48,6 @@ We welcome contributions! Please follow these steps:
 
 ## Credits
 - **Story**: Based on *The Wall* by John Lanchester.
-- **Development Team**: Your Team's Names.
 - **Engine**: Godot Engine.
 
 ## License
