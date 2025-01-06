@@ -284,5 +284,6 @@ texture = ExtResource("16_pd05g")
 [node name="FootSteps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_xd47f")
 volume_db = -10.0
+bus = &"Ambient"
 
 [connection signal="finished" from="FootSteps" to="." method="_on_foot_steps_finished"]
