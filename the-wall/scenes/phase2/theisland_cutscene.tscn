@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dqgeuyv4dqafx"]
+[gd_scene load_steps=43 format=3 uid="uid://dqgeuyv4dqafx"]
 
 [ext_resource type="Script" path="res://scripts/phase2/theisland_cutscene.gd" id="1_imq7s"]
 [ext_resource type="Texture2D" uid="uid://wufgfp8jsy3v" path="res://assets/phase2/raft.png" id="2_ly630"]
@@ -20,8 +20,16 @@
 [ext_resource type="Texture2D" uid="uid://c75bvfmiew06" path="res://assets/phase3/kav3.png" id="17_h1yek"]
 [ext_resource type="Texture2D" uid="uid://c54dffb8x3hso" path="res://assets/phase1/2d_lights_and_shadows_neutral_point_light.webp" id="22_4kjxk"]
 [ext_resource type="AudioStream" uid="uid://b5pxaipmcev54" path="res://assets/phase1/sounds/meeresrauschen-152733.mp3" id="22_dbi2o"]
+[ext_resource type="Texture2D" uid="uid://bxbx6al0khg56" path="res://assets/phase1/frame_1_expolosion.png" id="23_k7r03"]
 [ext_resource type="AudioStream" uid="uid://bbc7b2cjh2c1k" path="res://assets/phase1/sounds/shoot.mp3" id="23_n6agd"]
+[ext_resource type="Texture2D" uid="uid://cfn3wcfot3iii" path="res://assets/phase1/frame_2_explosion.png" id="24_1pin6"]
 [ext_resource type="AudioStream" uid="uid://dld0fqaoq3561" path="res://assets/phase1/sounds/medium-explosion-40472.mp3" id="24_8ia88"]
+[ext_resource type="Texture2D" uid="uid://rca8yk8u13l0" path="res://assets/phase1/frame_3_explosion.png" id="25_xc4ry"]
+[ext_resource type="Texture2D" uid="uid://cwvrl7a4jas0s" path="res://assets/phase1/frame_4_explosion.png" id="26_hqusa"]
+[ext_resource type="Texture2D" uid="uid://d34s2uchn0x6x" path="res://assets/phase1/frame_5_explosion.png" id="27_fikr2"]
+[ext_resource type="Texture2D" uid="uid://b6jsn1ghktw1x" path="res://assets/phase1/frame_6_explosion.png" id="28_xs3as"]
+[ext_resource type="Texture2D" uid="uid://msl5nkyvdvc6" path="res://assets/phase1/frame_7_explosion.png" id="29_yjrh1"]
+[ext_resource type="Texture2D" uid="uid://5dyyu0n2634o" path="res://assets/phase1/frame_8_explosion.png" id="30_qj6nl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lvvr8"]
 texture = ExtResource("2_ly630")
@@ -166,6 +174,54 @@ tracks/6/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("explosions/explosion1:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("explosions/explosion2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("explosions/explosion3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("explosions/explosion4:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_1ap2p"]
 resource_name = "main_animation"
@@ -178,8 +234,8 @@ tracks/0/path = NodePath("Kavanagh/Camera2D/DialogPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 0.53, 0.58, 4, 4.02, 4.04, 4.06, 4.1, 6.3, 6.32, 6.34, 6.39, 16.5, 16.55, 18, 18.06, 19.5, 19.52, 19.54, 19.56, 19.58, 19.6, 19.62, 19.64, 19.7, 25, 28),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.5, 0.53, 0.58, 4, 4.02, 4.04, 4.06, 4.1, 6.3, 6.32, 6.34, 6.39, 16.5, 16.55, 18, 18.06, 19.5, 19.52, 19.54, 19.56, 19.58, 19.6, 19.62, 19.64, 19.66, 19.72, 25, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": ["James", "Kavanagh, come here. I see lights."],
 "method": &"display_text"
@@ -235,6 +291,9 @@ tracks/0/keys = {
 "args": ["Pirates", "Take the supplies! And the woman!"],
 "method": &"display_text"
 }, {
+"args": ["Kavanagh", "What should we do?"],
+"method": &"display_text"
+}, {
 "args": ["James", "Guys, I still have the grenade. I'm gonna detonate it on their ship."],
 "method": &"display_text"
 }, {
@@ -270,9 +329,12 @@ tracks/1/path = NodePath("AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.51, 0.54, 4.01, 4.03, 4.05, 4.07, 6.31, 6.33, 6.35, 16.51, 18.01, 19.51, 19.53, 19.55, 19.57, 19.59, 19.61, 19.63, 19.65),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.51, 0.54, 4.01, 4.03, 4.05, 4.07, 6.31, 6.33, 6.35, 16.51, 18.01, 19.51, 19.53, 19.55, 19.57, 19.59, 19.61, 19.63, 19.65, 19.67),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
+"args": [],
+"method": &"_wait_for_accept"
+}, {
 "args": [],
 "method": &"_wait_for_accept"
 }, {
@@ -424,9 +486,21 @@ tracks/9/path = NodePath("explosion_audio")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(24.46),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(24.46, 25.3, 27.6, 28.5, 29),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
 "args": [0.0],
 "method": &"play"
 }]
@@ -555,6 +629,110 @@ tracks/15/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/16/type = "method"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("explosions/explosion1")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(25.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/17/type = "method"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("explosions/explosion2")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(27.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/18/type = "method"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("explosions/explosion3")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(29),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("explosions/explosion1:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 25.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("explosions/explosion2:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 27.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("explosions/explosion3:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 29),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("explosions/explosion4:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 28.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/23/type = "method"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("explosions/explosion4")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(28.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default", 1.0, false],
+"method": &"play"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c5j7v"]
 _data = {
@@ -627,6 +805,38 @@ animations = [{
 }],
 "loop": true,
 "name": &"running",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atyni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_k7r03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1pin6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xc4ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_hqusa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fikr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_xs3as")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_yjrh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_qj6nl")
+}],
+"loop": true,
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -721,3 +931,24 @@ stream = ExtResource("22_dbi2o")
 autoplay = true
 bus = &"Ambient"
 parameters/looping = false
+
+[node name="explosions" type="Node" parent="."]
+
+[node name="explosion1" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(1166, 984)
+sprite_frames = SubResource("SpriteFrames_atyni")
+
+[node name="explosion2" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(251, 815)
+sprite_frames = SubResource("SpriteFrames_atyni")
+
+[node name="explosion3" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(548, 1286)
+scale = Vector2(0.501645, 0.51727)
+sprite_frames = SubResource("SpriteFrames_atyni")
+
+[node name="explosion4" type="AnimatedSprite2D" parent="explosions"]
+position = Vector2(427, 1038)
+scale = Vector2(0.501645, 0.51727)
+sprite_frames = SubResource("SpriteFrames_atyni")
+frame_progress = 0.719529

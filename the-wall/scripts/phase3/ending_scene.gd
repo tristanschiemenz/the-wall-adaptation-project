@@ -1,6 +1,6 @@
 extends Node2D
 @onready var dialog: Control = $DialogPlayer
-@onready var fade_out = preload("res://scenes/fade_layer.tscn")
+@onready var fade_out_animation: AnimationPlayer = $fadeOutAnimation
 
 func _wait_for_accept() -> void:
 	while true:
@@ -24,7 +24,7 @@ func _ending_dialog() -> void:
 	await _wait_for_accept()
 	await get_tree().create_timer(0.5).timeout
 	
-	dialog.display_text("Hifa", "..., I have to tell you something.")
+	dialog.display_text("Hifa", "... I have to tell you something.")
 	await _wait_for_accept()
 	await get_tree().create_timer(0.5).timeout
 
@@ -59,9 +59,11 @@ func _ending_dialog() -> void:
 	dialog.display_text("Kavanagh", "It would begin like this...")
 	await _wait_for_accept()
 	await get_tree().create_timer(0.5).timeout
-
-	var fade_intstance = fade_out.instantiate()
-	add_child(fade_intstance)
-	fade_intstance.fade_in_black_with_text("It's cold on the Wall...",8.0)
+	
+	dialog.display_text("Kavanagh", "It's cold on the Wall...")
+	await _wait_for_accept()
+	await get_tree().create_timer(0.5).timeout
+	
+	fade_out_animation.play("fadeout")
 
 	
