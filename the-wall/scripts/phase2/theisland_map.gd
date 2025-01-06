@@ -89,7 +89,7 @@ func _quest_finished_dialog():
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 
-	dialog.display_text("Kavanagh", "Nice to meet you, Marie. I’m Kavanagh.")
+	dialog.display_text("Kavanagh", "Nice to meet you, Kellan. I’m Kavanagh.")
 	await _wait_for_accept()
 	await get_tree().create_timer(.5).timeout
 
